@@ -7,6 +7,18 @@
   <meta name="description" content="Conciergerie haut de gamme à Bruxelles : gestion locative Airbnb et courte durée, conciergerie privée et intendance. Ixelles, Sablon, Châtelain, Louise, Quartier Européen. Estimez vos revenus en 30 secondes.">
   <meta name="theme-color" content="#0B1F3A">
 
+  <!-- Meticulous : enregistreur de sessions pour les tests visuels automatiques.
+       Chargé UNIQUEMENT hors production (localhost / prévisualisations), en premier
+       script et sans async/defer comme l'exige Meticulous. -->
+  <script>
+    (function () {
+      var h = location.hostname;
+      var isTestEnv = h === "localhost" || h === "127.0.0.1" || /\.(netlify\.app|vercel\.app|github\.io)$/.test(h);
+      if (!isTestEnv) return;
+      document.write('<script data-recording-token="CAWMn9Glr8mAXitQSzLz7XRqL2nF00c7jXg9QdcF" data-is-production-environment="false" src="https://snippet.meticulous.ai/v1/meticulous.js"><\/script>');
+    })();
+  </script>
+
   <!-- Open Graph -->
   <meta property="og:title" content="Maison Ambre — Conciergerie Airbnb à Bruxelles">
   <meta property="og:description" content="Confiez votre bien bruxellois à des experts de la gestion locative. Commission transparente de 20 %, conformité réglementaire garantie.">
