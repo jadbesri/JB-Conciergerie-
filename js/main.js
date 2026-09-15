@@ -1,5 +1,5 @@
 /* ==========================================================================
-   JAD BESRI — Conciergerie Bruxelles
+   JB CONCIERGERIE — Bruxelles
    Script principal (vanilla JS, aucune dépendance)
 
    1. Données : communes / quartiers + modèle du simulateur
@@ -450,7 +450,7 @@
   $('#year').textContent = new Date().getFullYear();
   $('#legal-link').addEventListener('click', e => {
     e.preventDefault();
-    alert('Éditeur du site : Jad Besri, Bruxelles — jadbesri9@gmail.com — +32 495 82 56 94.\nLes estimations du simulateur sont indicatives et non contractuelles.');
+    alert('Éditeur du site : JB Conciergerie (Jad Besri), Bruxelles — jadbesri9@gmail.com — +32 495 82 56 94.\nLes estimations du simulateur sont indicatives et non contractuelles.');
   });
 
 })();
