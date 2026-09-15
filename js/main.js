@@ -117,6 +117,22 @@
       ]}
   ];
 
+  /**
+   * BIENS GÉRÉS — pour ajouter un appartement, copiez une ligne du modèle
+   * ci-dessous et déposez sa photo dans le dossier images/.
+   *
+   *   { name: 'Appartement Châtelain', zone: 'Ixelles · Châtelain', rooms: '2 chambres',
+   *     desc: 'Lumineux, rénové, à deux pas de la place du Châtelain.',
+   *     image: 'images/chatelain.jpg', tag: 'Airbnb', url: 'https://airbnb.com/…' }
+   *
+   * Tous les champs sauf name sont facultatifs. Tant que la liste est vide ou
+   * courte, des emplacements « Bientôt » complètent la grille.
+   */
+  const PROPERTIES = [
+    // { name: 'Appartement Châtelain', zone: 'Ixelles · Châtelain', rooms: '2 chambres', desc: '…', image: 'images/chatelain.jpg', tag: 'Airbnb', url: '' },
+  ];
+  const PORTFOLIO_MIN_SLOTS = 3;   // nombre de cartes affichées au minimum (vides comprises)
+
   const MODEL = {
     commission: 0.20,
     daysPerMonth: 30.4,
@@ -221,8 +237,10 @@
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target); } });
     }, { threshold: 0.12 });
     reveals.forEach(el => io.observe(el));
+    window.observeReveals = root => $$('.reveal', root).forEach(el => io.observe(el));
   } else {
     reveals.forEach(el => el.classList.add('is-visible'));
+    window.observeReveals = root => $$('.reveal', root).forEach(el => el.classList.add('is-visible'));
   }
 
 
@@ -232,6 +250,44 @@
     card.addEventListener('click', e => { if (!e.target.closest('a')) toggle(); });
     card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
   });
+
+
+  /* ---------- 4b. BIENS GÉRÉS ---------------------------------------------- */
+  (function renderPortfolio() {
+    const grid = $('#portfolio-grid');
+    if (!grid) return;
+    const esc = s => String(s || '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+    const cards = PROPERTIES.map(p => `
+      <article class="property reveal">
+        <div class="property__media">
+          ${p.image ? `<img src="${esc(p.image)}" alt="${esc(p.name)}" loading="lazy">` : ''}
+          ${p.tag ? `<span class="property__tag">${esc(p.tag)}</span>` : ''}
+        </div>
+        <div class="property__body">
+          <h3>${esc(p.name)}</h3>
+          <span class="property__meta">${[p.zone, p.rooms].filter(Boolean).map(esc).join(' · ')}</span>
+          ${p.desc ? `<p class="property__desc">${esc(p.desc)}</p>` : ''}
+          ${p.url ? `<a class="property__link" href="${esc(p.url)}" target="_blank" rel="noopener">Voir l'annonce →</a>` : ''}
+        </div>
+      </article>`);
+
+    const emptySlots = Math.max(0, PORTFOLIO_MIN_SLOTS - PROPERTIES.length);
+    for (let i = 0; i < emptySlots; i++) {
+      cards.push(`
+      <article class="property property--empty reveal" aria-label="Emplacement disponible">
+        <div class="property__media" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M3 12l9-8 9 8M5 10v10h14V10"/><path d="M12 13v4M10 15h4"/></svg>
+        </div>
+        <div class="property__body">
+          <h3>Bientôt</h3>
+          <span class="property__meta">Prochain bien confié</span>
+        </div>
+      </article>`);
+    }
+    grid.innerHTML = cards.join('');
+    window.observeReveals(grid);   // les cartes générées bénéficient aussi de l'animation d'apparition
+  })();
 
 
   /* ---------- 5. ZONES COUVERTES ------------------------------------------- */

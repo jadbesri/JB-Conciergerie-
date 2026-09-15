@@ -25,3 +25,13 @@ Numéro à modifier dans `js/main.js` (`WHATSAPP_NUMBER`).
 ruby -run -e httpd . -p 8000
 ```
 puis ouvrir http://localhost:8000
+
+## Ajouter un appartement (section « Biens gérés »)
+1. Déposer la photo dans `images/` (ex. `images/chatelain.jpg`).
+2. Dans `js/main.js`, ajouter une ligne dans la liste `PROPERTIES` :
+   ```js
+   { name: 'Appartement Châtelain', zone: 'Ixelles · Châtelain', rooms: '2 chambres',
+     desc: 'Lumineux, rénové, à deux pas de la place du Châtelain.',
+     image: 'images/chatelain.jpg', tag: 'Airbnb', url: 'https://airbnb.com/…' },
+   ```
+Les emplacements « Bientôt » disparaissent automatiquement au fur et à mesure.

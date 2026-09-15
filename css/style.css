@@ -244,6 +244,33 @@ input[type="range"] { width: 100%; accent-color: var(--green); cursor: pointer; 
 .service-card__toggle::after { content: " +"; }
 .service-card.is-open .service-card__toggle::after { content: " −"; }
 
+/* ---------- 6b. BIENS GÉRÉS --------------------------------------------- */
+.portfolio { background: var(--white); }
+.portfolio__grid { display: grid; gap: 18px; }
+.property {
+  background: var(--white); border: 1px solid var(--line); border-radius: var(--radius);
+  overflow: hidden; display: flex; flex-direction: column;
+  transition: transform .25s var(--ease), box-shadow .25s;
+}
+.property:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.property__media { position: relative; aspect-ratio: 4 / 3; background: var(--cream-dark); overflow: hidden; }
+.property__media img { width: 100%; height: 100%; object-fit: cover; }
+.property__tag { position: absolute; top: 12px; left: 12px; background: rgba(26, 42, 35, .9); color: var(--sand); font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 6px 10px; border-radius: 999px; }
+.property__body { padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+.property__body h3 { font-size: 1.3rem; margin: 0; }
+.property__meta { font-size: .82rem; color: var(--muted); }
+.property__desc { font-size: .9rem; color: var(--muted); margin: 6px 0 0; }
+.property__link { margin-top: auto; padding-top: 12px; font-size: .82rem; font-weight: 700; color: var(--green); text-decoration: underline; text-decoration-color: var(--sand); }
+
+/* Emplacement libre : pointillés + mention « Bientôt » */
+.property--empty { border: 1.5px dashed var(--sand-dark); background: var(--cream); box-shadow: none; }
+.property--empty:hover { transform: none; box-shadow: none; }
+.property--empty .property__media { background: transparent; display: grid; place-items: center; color: var(--sand-dark); }
+.property--empty .property__media svg { width: 38px; height: 38px; }
+.property--empty .property__body h3 { color: var(--sand-dark); font-style: italic; font-weight: 500; }
+.portfolio__note { text-align: center; color: var(--muted); font-size: .92rem; margin: 28px auto 0; }
+.portfolio__note a { color: var(--green); font-weight: 700; text-decoration: underline; cursor: pointer; }
+
 /* ---------- 7. ZONES ---------------------------------------------------- */
 .zones { background: var(--cream-dark); }
 .zones__layout { display: grid; gap: 20px; }
@@ -382,6 +409,7 @@ input[type="range"] { width: 100%; accent-color: var(--green); cursor: pointer; 
 @media (min-width: 600px) {
   .field-row { grid-template-columns: 1fr 1fr; }
   .services__grid { grid-template-columns: repeat(2, 1fr); }
+  .portfolio__grid { grid-template-columns: repeat(2, 1fr); }
   .hero__badges { flex-direction: row; flex-wrap: wrap; gap: 8px 20px; }
   .footer__grid { grid-template-columns: 1fr 1fr; }
 }
@@ -414,6 +442,7 @@ input[type="range"] { width: 100%; accent-color: var(--green); cursor: pointer; 
   .hero { padding: calc(var(--header-h) + 88px) 0 110px; }
   .hero__grid { grid-template-columns: 1.15fr .85fr; align-items: center; gap: 64px; }
   .services__grid { grid-template-columns: repeat(3, 1fr); }
+  .portfolio__grid { grid-template-columns: repeat(3, 1fr); }
   .zones__layout { grid-template-columns: 280px 1fr; gap: 32px; }
   .simulator__card { grid-template-columns: 1fr 1.1fr; }
   .simulator__result { border-top: 0; border-left: 1px solid var(--line); }
