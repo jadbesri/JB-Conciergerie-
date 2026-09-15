@@ -180,14 +180,16 @@ input[type="range"] { width: 100%; accent-color: var(--green); cursor: pointer; 
   color: var(--cream);
   overflow: hidden;
 }
-.hero__media { position: absolute; inset: 0; }
-.hero__media img { width: 100%; height: 100%; object-fit: cover; object-position: center 35%; }
-/* Voile vert sombre pour la lisibilité */
+/* Mobile : la photo forme un bandeau en haut (derrière le titre) et se fond
+   dans le vert sous lequel vient le formulaire. Ainsi la Grand-Place reste
+   cadrée correctement au lieu d'être rognée en une bande étroite. */
+.hero__media { position: absolute; top: 0; left: 0; right: 0; height: 640px; }
+.hero__media img { width: 100%; height: 100%; object-fit: cover; object-position: 42% 30%; }
+/* Voile vert sombre pour la lisibilité + fondu vers le vert en bas */
 .hero__media::after {
   content: ""; position: absolute; inset: 0;
   background:
-    linear-gradient(90deg, rgba(26, 42, 35, .55) 0%, rgba(26, 42, 35, .15) 55%, rgba(26, 42, 35, 0) 100%),
-    linear-gradient(180deg, rgba(26, 42, 35, .45) 0%, rgba(26, 42, 35, .35) 45%, rgba(26, 42, 35, .75) 100%);
+    linear-gradient(180deg, rgba(26, 42, 35, .45) 0%, rgba(26, 42, 35, .35) 45%, rgba(26, 42, 35, .6) 70%, var(--green-deep) 100%);
 }
 .hero__media.is-missing { background: linear-gradient(160deg, var(--green-deep) 0%, var(--green) 60%, var(--green-soft) 100%); }
 .hero__grid { position: relative; display: grid; gap: 40px; }
@@ -441,7 +443,14 @@ input[type="range"] { width: 100%; accent-color: var(--green); cursor: pointer; 
   .nav__link::after { content: ""; position: absolute; left: 12px; right: 12px; bottom: 2px; height: 1.5px; background: var(--sand); transform: scaleX(0); transform-origin: left; transition: transform .25s var(--ease); }
   .nav__link:hover::after, .nav__link.is-active::after { transform: scaleX(1); }
   .nav__cta { padding: 12px 20px; font-size: .88rem; }
-  .hero { padding: calc(var(--header-h) + 88px) 0 110px; }
+.hero { padding: calc(var(--header-h) + 88px) 0 110px; }
+.hero__media { height: 100%; }
+.hero__media img { object-position: center 35%; }
+.hero__media::after {
+  background:
+    linear-gradient(90deg, rgba(26, 42, 35, .55) 0%, rgba(26, 42, 35, .15) 55%, rgba(26, 42, 35, 0) 100%),
+    linear-gradient(180deg, rgba(26, 42, 35, .45) 0%, rgba(26, 42, 35, .35) 45%, rgba(26, 42, 35, .75) 100%);
+}
   .hero__grid { grid-template-columns: 1.15fr .85fr; align-items: center; gap: 64px; }
   .services__grid { grid-template-columns: repeat(3, 1fr); }
   .portfolio__grid { grid-template-columns: repeat(3, 1fr); }
