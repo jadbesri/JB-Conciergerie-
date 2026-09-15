@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Maison Ambre — Conciergerie & Gestion Locative Airbnb à Bruxelles</title>
-  <meta name="description" content="Conciergerie haut de gamme à Bruxelles : gestion locative Airbnb et courte durée, conciergerie privée et intendance. Ixelles, Sablon, Châtelain, Louise, Quartier Européen. Estimez vos revenus en 30 secondes.">
-  <meta name="theme-color" content="#0B1F3A">
+  <title>Jad Besri — Conciergerie & gestion locative à Bruxelles</title>
+  <meta name="description" content="Conciergerie indépendante à Bruxelles : gestion de votre location courte durée (Airbnb, Booking), conciergerie privée et intendance. Ixelles, Saint-Gilles, Bruxelles-Ville, Uccle, Etterbeek. Contact direct sur WhatsApp.">
+  <meta name="theme-color" content="#1C1C1A">
 
   <!-- Meticulous : enregistreur de sessions pour les tests visuels automatiques.
-       Chargé UNIQUEMENT hors production (localhost / prévisualisations), en premier
-       script et sans async/defer comme l'exige Meticulous. -->
+       Chargé UNIQUEMENT hors production (localhost / prévisualisations). -->
   <script>
     (function () {
       var h = location.hostname;
@@ -19,33 +18,30 @@
     })();
   </script>
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Maison Ambre — Conciergerie Airbnb à Bruxelles">
-  <meta property="og:description" content="Confiez votre bien bruxellois à des experts de la gestion locative. Commission transparente de 20 %, conformité réglementaire garantie.">
+  <meta property="og:title" content="Jad Besri — Conciergerie à Bruxelles">
+  <meta property="og:description" content="Gestion locative courte durée, conciergerie privée et intendance à Bruxelles. Un interlocuteur unique, joignable sur WhatsApp.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_BE">
+  <meta property="og:image" content="images/hero.jpg">
 
-  <!-- Typographie : Cormorant Garamond (titres, serif) + Manrope (corps, sans-serif) -->
+  <!-- Typographie : Newsreader (titres) + Inter (texte) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
-
-  <!-- Favicon SVG inline (monogramme doré sur bleu nuit) -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230B1F3A'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='36' font-weight='700' fill='%23C9A961' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%231C1C1A'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='32' fill='%23F4F1EA' text-anchor='middle'%3EJB%3C/text%3E%3C/svg%3E">
 </head>
 <body>
 
   <!-- ============================================================
-       HEADER / NAVIGATION
-       Sticky, transparent sur le hero puis opaque au scroll (JS).
+       HEADER
        ============================================================ -->
   <header class="header" id="header">
     <div class="container header__inner">
-      <a href="#accueil" class="logo" aria-label="Maison Ambre — Accueil">
-        <span class="logo__mark" aria-hidden="true">A</span>
-        <span class="logo__text">Maison <em>Ambre</em><small>Conciergerie · Bruxelles</small></span>
+      <a href="#accueil" class="brand" aria-label="Jad Besri — Accueil">
+        <span class="brand__name">Jad Besri</span>
+        <span class="brand__sub">Conciergerie · Bruxelles</span>
       </a>
 
       <nav class="nav" id="nav" aria-label="Navigation principale">
@@ -56,11 +52,11 @@
           <li><a href="#tarifs" class="nav__link">Tarifs</a></li>
           <li><a href="#contact" class="nav__link">Contact</a></li>
         </ul>
-        <a href="#simulateur" class="btn btn--gold nav__cta">Estimer mes revenus à Bruxelles</a>
+        <a href="#simulateur" class="btn btn--dark nav__cta">Estimer mes revenus</a>
       </nav>
 
       <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav">
-        <span></span><span></span><span></span>
+        <span></span><span></span>
       </button>
     </div>
   </header>
@@ -68,88 +64,50 @@
   <main>
 
     <!-- ============================================================
-         HERO
+         HERO — photo pleine largeur (images/hero.jpg) + texte sobre
          ============================================================ -->
     <section class="hero" id="accueil">
-      <div class="hero__bg" aria-hidden="true">
-        <!-- Motif décoratif : silhouette stylisée de la Grand-Place / Bruxelles -->
-        <svg class="hero__skyline" viewBox="0 0 1440 220" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0 220V150h60v-30h20v30h40v-60l20-20 20 20v60h50V90h30v60h40v-40h20v40h60V60l25-40 25 40v90h50v-50h30v50h40v-70h30v70h50V80h20v70h60v-30h30v30h40V70h25v80h50v-40h40v40h60V30l30-30 30 30v120h40v-50h30v50h60v-70h20v70h50V110h40v40h50v-60h30v60h60v-40h20v40h80v220z" fill="currentColor"/>
-        </svg>
+      <div class="hero__media" aria-hidden="true">
+        <img src="images/hero.jpg" alt="" onerror="this.parentElement.classList.add('is-missing'); this.remove();">
       </div>
-
-      <div class="container hero__grid">
-        <div class="hero__content reveal">
-          <p class="eyebrow">Gestion locative · Conciergerie privée · Intendance</p>
-          <h1 class="hero__title">Confiez votre bien bruxellois à des <em>experts</em> de la gestion locative</h1>
-          <p class="hero__subtitle">
-            Nous prenons en charge chaque détail de votre location courte durée — annonces, voyageurs, ménage hôtelier, maintenance, administratif — pour que vous gagniez du temps et que votre bien génère en moyenne <strong>+50&nbsp;%</strong> de revenus nets par rapport à une location classique, à Ixelles comme au Sablon.
-          </p>
-          <ul class="hero__badges" aria-label="Garanties">
-            <li>✓ Conforme à la réglementation bruxelloise</li>
-            <li>✓ Accueil des voyageurs 7j/7</li>
-            <li>✓ Sans engagement de durée</li>
-          </ul>
-        </div>
-
-        <!-- Formulaire rapide d'estimation : redirige vers le simulateur avec les valeurs pré-remplies -->
-        <div class="hero__card reveal" id="hero-form-card">
-          <h2 class="hero__card-title">Estimez vos revenus en 30 secondes</h2>
-          <p class="hero__card-sub">Gratuit et sans engagement — basé sur nos données de marché bruxelloises.</p>
-          <form class="quick-form" id="quick-form" novalidate>
-            <div class="field">
-              <label for="q-zone">Quartier / commune</label>
-              <select id="q-zone" name="zone" required>
-                <!-- Options générées par JS depuis la base de données de quartiers -->
-              </select>
-            </div>
-            <div class="field-row">
-              <div class="field">
-                <label for="q-rooms">Chambres</label>
-                <select id="q-rooms" name="rooms">
-                  <option value="0">Studio</option>
-                  <option value="1" selected>1 chambre</option>
-                  <option value="2">2 chambres</option>
-                  <option value="3">3 chambres</option>
-                  <option value="4">4 chambres et +</option>
-                </select>
-              </div>
-              <div class="field">
-                <label for="q-type">Type de bien</label>
-                <select id="q-type" name="type">
-                  <option value="apartment" selected>Appartement</option>
-                  <option value="house">Maison</option>
-                  <option value="loft">Loft / Duplex</option>
-                </select>
-              </div>
-            </div>
-            <button type="submit" class="btn btn--gold btn--block">Calculer mon estimation →</button>
-            <p class="quick-form__note">Aucune donnée personnelle requise à cette étape.</p>
-          </form>
+      <div class="container hero__content">
+        <p class="eyebrow eyebrow--light">Gestion locative · Conciergerie privée · Intendance</p>
+        <h1>Votre bien à Bruxelles,<br>géré comme si c'était le mien.</h1>
+        <p class="hero__text">
+          Je m'occupe de votre location courte durée de A à Z — annonces, voyageurs, ménage, entretien, démarches régionales — avec un seul interlocuteur : moi.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--wa" data-wa data-wa-text="Bonjour Jad, je souhaite discuter de la gestion de mon bien à Bruxelles.">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+            Discuter sur WhatsApp
+          </a>
+          <a href="#simulateur" class="btn btn--ghost">Estimer mes revenus</a>
         </div>
       </div>
     </section>
 
     <!-- ============================================================
-         CHIFFRES CLÉS (compteurs animés)
+         QUI SUIS-JE
          ============================================================ -->
-    <section class="stats" aria-label="Chiffres clés">
-      <div class="container stats__grid">
-        <div class="stat reveal">
-          <span class="stat__value"><span class="counter" data-target="180">0</span>+</span>
-          <span class="stat__label">biens gérés à Bruxelles</span>
+    <section class="section about">
+      <div class="container about__grid">
+        <div class="about__aside">
+          <p class="eyebrow">Qui suis-je</p>
+          <h2>Jad Besri</h2>
+          <p class="about__role">Étudiant en master d'architecture, conciergerie indépendante à Bruxelles</p>
         </div>
-        <div class="stat reveal">
-          <span class="stat__value"><span class="counter" data-target="4.9" data-decimals="1">0</span>/5</span>
-          <span class="stat__label">note moyenne voyageurs</span>
-        </div>
-        <div class="stat reveal">
-          <span class="stat__value"><span class="counter" data-target="82">0</span>&nbsp;%</span>
-          <span class="stat__label">taux d'occupation moyen</span>
-        </div>
-        <div class="stat reveal">
-          <span class="stat__value"><span class="counter" data-target="12">0</span></span>
-          <span class="stat__label">communes couvertes</span>
+        <div class="about__body">
+          <p>
+            Je lance mon activité de conciergerie à Bruxelles avec une idée simple : un propriétaire doit pouvoir confier son bien à quelqu'un qu'il connaît, qu'il peut joindre directement, et qui traite son appartement avec le même soin que le sien.
+          </p>
+          <p>
+            Ma formation d'architecte me donne un regard particulier sur les espaces : agencement, lumière, mise en valeur des volumes sur les photos, petites améliorations qui font la différence dans une annonce. Je connais Bruxelles quartier par quartier, et je limite volontairement le nombre de biens que je gère pour rester disponible pour chacun.
+          </p>
+          <ul class="about__points">
+            <li><strong>Un seul interlocuteur</strong> — moi, joignable sur WhatsApp, pas un standard.</li>
+            <li><strong>Transparence</strong> — une commission claire, un relevé mensuel, aucune surprise.</li>
+            <li><strong>Conformité</strong> — je vous accompagne dans les démarches de la Région de Bruxelles-Capitale.</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -159,114 +117,53 @@
          ============================================================ -->
     <section class="section services" id="services">
       <div class="container">
-        <div class="section__head reveal">
-          <p class="eyebrow">Nos services</p>
-          <h2>Une gestion <em>complète</em>, du premier clic au dernier check-out</h2>
-          <p class="section__lead">Cliquez sur une carte pour découvrir le détail de chaque prestation. Tout est inclus dans notre commission — sans frais cachés.</p>
+        <div class="section__head">
+          <p class="eyebrow">Services</p>
+          <h2>Ce dont je m'occupe</h2>
         </div>
 
-        <div class="services__grid">
-          <!-- Chaque carte est un bouton accessible qui se déplie (JS) -->
-          <article class="service-card reveal" tabindex="0" role="button" aria-expanded="false">
-            <div class="service-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 5h16v14H4zM4 9h16M8 13h8M8 16h5"/></svg>
+        <div class="services__list">
+          <article class="service">
+            <span class="service__num">01</span>
+            <div>
+              <h3>Annonce & photos</h3>
+              <p>Photos soignées, texte en français, anglais et néerlandais, publication sur Airbnb et Booking.com, prix ajustés selon la saison et les événements bruxellois.</p>
             </div>
-            <h3>Création & optimisation d'annonces</h3>
-            <p class="service-card__short">Photos professionnelles, textes bilingues FR/EN/NL et tarification dynamique pour maximiser vos réservations.</p>
-            <div class="service-card__more">
-              <ul>
-                <li>Shooting photo professionnel & home staging léger</li>
-                <li>Diffusion sur Airbnb, Booking.com, Vrbo et notre site direct</li>
-                <li>Tarification dynamique ajustée aux événements bruxellois (sommets UE, salons, Winter Wonders…)</li>
-                <li>Gestion des avis et du positionnement Superhost</li>
-              </ul>
-            </div>
-            <span class="service-card__toggle" aria-hidden="true">En savoir plus</span>
           </article>
-
-          <article class="service-card reveal" tabindex="0" role="button" aria-expanded="false">
-            <div class="service-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"/><path d="M17 4l1.5 1.5L21 3"/></svg>
+          <article class="service">
+            <span class="service__num">02</span>
+            <div>
+              <h3>Accueil des voyageurs</h3>
+              <p>Réponse aux messages, remise des clés en personne ou par boîte sécurisée, guide du quartier, disponibilité pendant le séjour.</p>
             </div>
-            <h3>Accueil personnalisé des voyageurs</h3>
-            <p class="service-card__short">Check-in en personne ou boîte à clés sécurisée, guide du quartier et assistance en 3 langues.</p>
-            <div class="service-card__more">
-              <ul>
-                <li>Accueil physique 7j/7, y compris arrivées tardives</li>
-                <li>Livret d'accueil digital : bonnes adresses d'Ixelles, du Châtelain, du Sablon…</li>
-                <li>Messagerie voyageurs gérée en moins de 15 minutes</li>
-                <li>Vérification de l'identité et dépôt de garantie</li>
-              </ul>
-            </div>
-            <span class="service-card__toggle" aria-hidden="true">En savoir plus</span>
           </article>
-
-          <article class="service-card reveal" tabindex="0" role="button" aria-expanded="false">
-            <div class="service-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12l9-8 9 8M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg>
+          <article class="service">
+            <span class="service__num">03</span>
+            <div>
+              <h3>Ménage & linge</h3>
+              <p>Ménage complet entre chaque séjour, linge de lit et serviettes fournis, contrôle de l'appartement avant chaque arrivée. Facturé aux voyageurs.</p>
             </div>
-            <h3>Ménage professionnel & linge hôtelier</h3>
-            <p class="service-card__short">Équipes formées aux standards hôteliers, linge blanc premium et consommables réassortis à chaque séjour.</p>
-            <div class="service-card__more">
-              <ul>
-                <li>Check-list qualité en 60 points après chaque départ</li>
-                <li>Linge de lit en percale de coton, serviettes 500 g/m²</li>
-                <li>Produits d'accueil (savon, café, thé) fournis</li>
-                <li>Contrôle photo systématique avant chaque arrivée</li>
-              </ul>
-            </div>
-            <span class="service-card__toggle" aria-hidden="true">En savoir plus</span>
           </article>
-
-          <article class="service-card reveal" tabindex="0" role="button" aria-expanded="false">
-            <div class="service-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L4 17l3 3 5.3-5.3a4 4 0 0 0 5.4-5.4l-2.4 2.4-2.1-2.1z"/></svg>
+          <article class="service">
+            <span class="service__num">04</span>
+            <div>
+              <h3>Entretien & petits travaux</h3>
+              <p>Suivi de l'état du bien, intervention rapide en cas de problème, coordination des artisans si nécessaire, devis validé par vous au préalable.</p>
             </div>
-            <h3>Maintenance & assistance 24/7</h3>
-            <p class="service-card__short">Une ligne d'urgence permanente et un réseau d'artisans bruxellois de confiance pour intervenir rapidement.</p>
-            <div class="service-card__more">
-              <ul>
-                <li>Astreinte technique 24h/24 pour les voyageurs</li>
-                <li>Plombiers, électriciens, serruriers partenaires à tarifs négociés</li>
-                <li>Petites réparations incluses, devis transparent au-delà</li>
-                <li>Visites de contrôle régulières de votre bien</li>
-              </ul>
-            </div>
-            <span class="service-card__toggle" aria-hidden="true">En savoir plus</span>
           </article>
-
-          <article class="service-card reveal" tabindex="0" role="button" aria-expanded="false">
-            <div class="service-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4M9 12h6M9 16h6"/></svg>
+          <article class="service">
+            <span class="service__num">05</span>
+            <div>
+              <h3>Démarches administratives</h3>
+              <p>Aide à l'enregistrement de l'hébergement touristique auprès de la Région, taxe de séjour, relevé mensuel de vos revenus.</p>
             </div>
-            <h3>Gestion administrative locale</h3>
-            <p class="service-card__short">Enregistrement régional, taxe de séjour, reporting mensuel : nous gérons la paperasse bruxelloise à votre place.</p>
-            <div class="service-card__more">
-              <ul>
-                <li>Accompagnement pour la déclaration d'hébergement touristique en Région bruxelloise</li>
-                <li>Déclaration et reversement de la taxe régionale de séjour</li>
-                <li>Relevé mensuel détaillé (revenus, charges, occupation)</li>
-                <li>Documents prêts pour votre comptable</li>
-              </ul>
-            </div>
-            <span class="service-card__toggle" aria-hidden="true">En savoir plus</span>
           </article>
-
-          <article class="service-card service-card--accent reveal" tabindex="0" role="button" aria-expanded="false">
-            <div class="service-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5L12 15.6 7.1 18.2l.9-5.5-4-3.9 5.5-.8z"/></svg>
+          <article class="service">
+            <span class="service__num">06</span>
+            <div>
+              <h3>Conciergerie privée & intendance</h3>
+              <p>Pour votre résidence principale ou secondaire, sans mise en location : courrier, artisans, préparation du logement avant votre retour, courses, pressing.</p>
             </div>
-            <h3>Conciergerie privée & intendance</h3>
-            <p class="service-card__short">Pour votre résidence principale ou secondaire : gestion du quotidien, préparation de votre retour, surveillance en votre absence.</p>
-            <div class="service-card__more">
-              <ul>
-                <li>Intendance de résidence : courrier, plantes, entretien, artisans</li>
-                <li>Préparation de la maison avant votre arrivée (courses, linge, température)</li>
-                <li>Réservations restaurants, chauffeur, pressing, événements</li>
-                <li>Formule mensuelle sur mesure — voir <a href="#tarifs">nos tarifs</a></li>
-              </ul>
-            </div>
-            <span class="service-card__toggle" aria-hidden="true">En savoir plus</span>
           </article>
         </div>
       </div>
@@ -277,136 +174,88 @@
          ============================================================ -->
     <section class="section zones" id="zones">
       <div class="container">
-        <div class="section__head reveal">
+        <div class="section__head">
           <p class="eyebrow">Zones couvertes</p>
-          <h2>Nous connaissons <em>chaque quartier</em> de Bruxelles</h2>
-          <p class="section__lead">Nos équipes sont basées à Ixelles et interviennent dans toute la Région de Bruxelles-Capitale. Sélectionnez une commune pour découvrir les quartiers que nous gérons.</p>
+          <h2>Les communes où j'interviens</h2>
+          <p class="section__lead">Basé à Bruxelles, je me déplace dans toute la Région. Les quartiers marqués d'un point sont ceux où la demande de courte durée est la plus forte.</p>
         </div>
-
-        <div class="zones__layout">
-          <!-- Liste des communes (onglets) -->
-          <div class="zones__tabs reveal" role="tablist" aria-label="Communes" id="zones-tabs">
-            <!-- Généré par JS -->
-          </div>
-
-          <!-- Détail de la commune sélectionnée -->
-          <div class="zones__panel reveal" id="zones-panel" role="tabpanel" aria-live="polite">
-            <!-- Généré par JS -->
-          </div>
+        <div class="zones__grid" id="zones-grid">
+          <!-- Généré par JS à partir de la liste des communes -->
         </div>
-
-        <p class="zones__note reveal">
-          Votre commune n&rsquo;apparaît pas&nbsp;? Nous étudions également les biens à Molenbeek, Saint-Josse, Evere, Ganshoren, Koekelberg ou Berchem-Sainte-Agathe.
-          <a href="#contact">Contactez-nous</a> pour une étude personnalisée.
-        </p>
+        <p class="zones__note">Une autre commune ? <a data-wa data-wa-text="Bonjour Jad, mon bien se situe dans une commune non listée sur votre site. Pouvez-vous m'en dire plus ?">Écrivez-moi</a>, j'étudie chaque demande.</p>
       </div>
     </section>
 
     <!-- ============================================================
-         SIMULATEUR DE REVENUS (interactif)
+         SIMULATEUR
          ============================================================ -->
     <section class="section simulator" id="simulateur">
-      <div class="container">
-        <div class="section__head section__head--light reveal">
-          <p class="eyebrow eyebrow--gold">Simulateur de revenus</p>
-          <h2>Combien votre bien peut-il <em>rapporter</em> à Bruxelles&nbsp;?</h2>
-          <p class="section__lead">Estimation indicative basée sur les prix moyens par nuit et les taux d'occupation observés dans chaque quartier. Un audit sur place affine ces chiffres.</p>
-        </div>
+      <div class="container simulator__grid">
+        <div>
+          <p class="eyebrow">Simulateur</p>
+          <h2>Une estimation de vos revenus</h2>
+          <p class="section__lead">Ordre de grandeur calculé à partir des prix par nuit et taux d'occupation moyens observés par quartier. Une visite sur place permet d'affiner.</p>
 
-        <div class="simulator__card reveal">
           <form class="simulator__form" id="sim-form" novalidate>
             <div class="field">
-              <label for="sim-zone">Quartier / commune</label>
+              <label for="sim-zone">Quartier</label>
               <select id="sim-zone" name="zone"></select>
             </div>
-
             <div class="field">
-              <label for="sim-rooms">Nombre de chambres : <output for="sim-rooms" id="sim-rooms-out">1</output></label>
-              <input type="range" id="sim-rooms" name="rooms" min="0" max="4" step="1" value="1" aria-describedby="sim-rooms-hint">
-              <div class="range-scale" id="sim-rooms-hint" aria-hidden="true"><span>Studio</span><span>1</span><span>2</span><span>3</span><span>4+</span></div>
+              <label for="sim-rooms">Chambres : <output for="sim-rooms" id="sim-rooms-out">1</output></label>
+              <input type="range" id="sim-rooms" name="rooms" min="0" max="4" step="1" value="1">
+              <div class="range-scale" aria-hidden="true"><span>Studio</span><span>1</span><span>2</span><span>3</span><span>4+</span></div>
             </div>
-
             <div class="field">
               <label for="sim-type">Type de bien</label>
               <select id="sim-type" name="type">
                 <option value="apartment" selected>Appartement</option>
                 <option value="house">Maison</option>
-                <option value="loft">Loft / Duplex</option>
+                <option value="loft">Loft / duplex</option>
               </select>
             </div>
-
             <div class="field">
               <span class="field__label">Standing</span>
               <div class="segmented" role="radiogroup" aria-label="Standing du bien">
                 <label><input type="radio" name="standing" value="standard" checked><span>Standard</span></label>
                 <label><input type="radio" name="standing" value="superior"><span>Supérieur</span></label>
-                <label><input type="radio" name="standing" value="luxury"><span>Luxe</span></label>
+                <label><input type="radio" name="standing" value="luxury"><span>Haut de gamme</span></label>
               </div>
             </div>
           </form>
+        </div>
 
-          <div class="simulator__result" id="sim-result" aria-live="polite">
-            <div class="result__main">
-              <span class="result__label">Revenu brut mensuel estimé</span>
-              <span class="result__value" id="res-gross">— €</span>
-              <span class="result__range" id="res-range">fourchette — €</span>
-            </div>
-            <div class="result__grid">
-              <div class="result__item">
-                <span class="result__label">Prix moyen / nuit</span>
-                <strong id="res-adr">—</strong>
-              </div>
-              <div class="result__item">
-                <span class="result__label">Taux d'occupation</span>
-                <strong id="res-occ">—</strong>
-              </div>
-              <div class="result__item">
-                <span class="result__label">Net après commission 20&nbsp;%</span>
-                <strong id="res-net">—</strong>
-              </div>
-              <div class="result__item">
-                <span class="result__label">vs. location classique</span>
-                <strong id="res-vs">—</strong>
-              </div>
-            </div>
-            <div class="result__bar" aria-hidden="true">
-              <div class="result__bar-row"><span>Courte durée (net)</span><div class="bar"><div class="bar__fill bar__fill--gold" id="bar-short"></div></div></div>
-              <div class="result__bar-row"><span>Location classique</span><div class="bar"><div class="bar__fill" id="bar-long"></div></div></div>
-            </div>
-            <a href="#contact" class="btn btn--gold btn--block" id="sim-cta">Recevoir une étude détaillée gratuite</a>
-            <p class="result__disclaimer">Estimation non contractuelle, hors charges (énergie, taxe de séjour refacturée aux voyageurs) et hors frais de ménage payés par les voyageurs. Les revenus dépendent de la saison, de la qualité du bien et du calendrier événementiel bruxellois.</p>
-          </div>
+        <div class="result" id="sim-result" aria-live="polite">
+          <span class="result__label">Revenu brut mensuel estimé</span>
+          <span class="result__value" id="res-gross">—</span>
+          <span class="result__range" id="res-range"></span>
+          <dl class="result__list">
+            <div><dt>Prix moyen par nuit</dt><dd id="res-adr">—</dd></div>
+            <div><dt>Taux d'occupation</dt><dd id="res-occ">—</dd></div>
+            <div><dt>Net après commission (20 %)</dt><dd id="res-net">—</dd></div>
+            <div><dt>Loyer classique comparable</dt><dd id="res-rent">—</dd></div>
+          </dl>
+          <a class="btn btn--wa btn--block" id="sim-cta" data-wa>Recevoir une estimation détaillée</a>
+          <p class="result__disclaimer">Estimation indicative, non contractuelle, hors charges et hors frais de ménage payés par les voyageurs. Les revenus varient selon la saison, l'état du bien et le calendrier bruxellois.</p>
         </div>
       </div>
     </section>
 
     <!-- ============================================================
-         CONFORMITÉ RÉGLEMENTAIRE BRUXELLES
+         RÉGLEMENTATION
          ============================================================ -->
     <section class="section compliance">
       <div class="container compliance__grid">
-        <div class="reveal">
-          <p class="eyebrow">Réglementation bruxelloise</p>
-          <h2>Louer en courte durée à Bruxelles, <em>en toute légalité</em></h2>
-          <p class="section__lead">La Région de Bruxelles-Capitale encadre strictement l'hébergement touristique. Nous vous accompagnons à chaque étape pour que votre bien soit enregistré, conforme et serein.</p>
+        <div>
+          <p class="eyebrow">Réglementation</p>
+          <h2>Louer en courte durée à Bruxelles, dans les règles</h2>
+          <p class="section__lead">La Région de Bruxelles-Capitale encadre l'hébergement touristique. Je vous accompagne dans chaque étape avant la première réservation.</p>
         </div>
-        <ol class="compliance__steps reveal">
-          <li>
-            <strong>Déclaration d'hébergement touristique</strong>
-            <span>Nous constituons votre dossier auprès de Bruxelles Économie et Emploi et obtenons votre numéro d'enregistrement, obligatoire sur toutes les annonces.</span>
-          </li>
-          <li>
-            <strong>Attestation de sécurité incendie</strong>
-            <span>Coordination de la visite du SIAMU et mise en conformité (détecteurs, extincteur, plan d'évacuation).</span>
-          </li>
-          <li>
-            <strong>Conformité urbanistique & copropriété</strong>
-            <span>Vérification de l'affectation du bien et du règlement de copropriété avant toute mise en location.</span>
-          </li>
-          <li>
-            <strong>Taxe régionale de séjour</strong>
-            <span>Déclaration mensuelle et reversement automatique de la taxe sur les hébergements touristiques : vous n'avez rien à faire.</span>
-          </li>
+        <ol class="steps">
+          <li><strong>Déclaration d'hébergement touristique</strong><span>Constitution du dossier et obtention du numéro d'enregistrement, à afficher sur les annonces.</span></li>
+          <li><strong>Sécurité incendie</strong><span>Coordination de l'attestation (détecteurs, extincteur, plan d'évacuation).</span></li>
+          <li><strong>Urbanisme & copropriété</strong><span>Vérification de l'affectation du bien et du règlement de copropriété.</span></li>
+          <li><strong>Taxe de séjour</strong><span>Déclaration et reversement de la taxe régionale, inclus dans la gestion.</span></li>
         </ol>
       </div>
     </section>
@@ -416,101 +265,47 @@
          ============================================================ -->
     <section class="section pricing" id="tarifs">
       <div class="container">
-        <div class="section__head reveal">
+        <div class="section__head">
           <p class="eyebrow">Tarifs</p>
-          <h2>Une commission <em>transparente</em>, alignée sur vos revenus</h2>
-          <p class="section__lead">Nous ne gagnons que si vous gagnez. Pas d'abonnement, pas de frais d'entrée, pas de surprise.</p>
+          <h2>Une commission, rien d'autre</h2>
+          <p class="section__lead">Pas d'abonnement, pas de frais d'entrée. Je ne gagne que si votre bien génère des revenus.</p>
         </div>
-
         <div class="pricing__grid">
-          <!-- Formule principale -->
-          <article class="price-card price-card--featured reveal">
-            <span class="price-card__badge">Le plus choisi</span>
+          <article class="plan plan--main">
             <h3>Gestion locative complète</h3>
-            <p class="price-card__desc">Pour les propriétaires qui souhaitent déléguer à 100 % leur location courte durée.</p>
-            <div class="price-card__price">
-              <span class="price-card__num">20&nbsp;%</span>
-              <span class="price-card__unit">des revenus générés<br>(HTVA)</span>
-            </div>
-            <ul class="price-card__list">
-              <li>Création et optimisation des annonces multi-plateformes</li>
-              <li>Tarification dynamique & gestion du calendrier</li>
-              <li>Communication voyageurs 7j/7 en FR / EN / NL</li>
-              <li>Accueil, remise des clés et état des lieux</li>
-              <li>Ménage hôtelier & linge premium (facturés aux voyageurs)</li>
-              <li>Maintenance, astreinte 24/7 et petites réparations</li>
-              <li>Enregistrement régional & taxe de séjour</li>
-              <li>Reporting mensuel et accès propriétaire en ligne</li>
-              <li>Sans engagement — préavis d'un mois</li>
+            <p class="plan__price"><span>20 %</span> des revenus de location, HTVA</p>
+            <ul class="plan__list">
+              <li>Annonce, photos et tarification</li>
+              <li>Communication avec les voyageurs, 7 jours sur 7</li>
+              <li>Accueil et remise des clés</li>
+              <li>Organisation du ménage et du linge (facturés aux voyageurs)</li>
+              <li>Suivi de l'entretien et des petits travaux</li>
+              <li>Démarches régionales et taxe de séjour</li>
+              <li>Relevé mensuel de vos revenus</li>
+              <li>Sans engagement, préavis d'un mois</li>
             </ul>
-            <a href="#contact" class="btn btn--gold btn--block">Demander un audit gratuit</a>
+            <a class="btn btn--dark" data-wa data-wa-text="Bonjour Jad, je suis intéressé(e) par la gestion locative complète (20 %). Pouvons-nous en discuter ?">Demander une visite gratuite</a>
           </article>
-
-          <!-- Formule conciergerie privée -->
-          <article class="price-card reveal">
+          <article class="plan">
             <h3>Conciergerie privée & intendance</h3>
-            <p class="price-card__desc">Pour les résidences principales et secondaires, sans mise en location.</p>
-            <div class="price-card__price">
-              <span class="price-card__num">Sur devis</span>
-              <span class="price-card__unit">forfait mensuel<br>dès 290 € HTVA</span>
-            </div>
-            <ul class="price-card__list">
-              <li>Interlocuteur dédié et visites régulières</li>
-              <li>Gestion du courrier, des artisans et des livraisons</li>
+            <p class="plan__price"><span>Sur devis</span> forfait mensuel selon vos besoins</p>
+            <ul class="plan__list">
+              <li>Visites régulières de votre résidence</li>
+              <li>Courrier, livraisons, artisans</li>
               <li>Préparation du logement avant votre retour</li>
-              <li>Entretien, jardin, pressing, courses</li>
-              <li>Services lifestyle : réservations, chauffeur, événements</li>
-              <li>Gestion des locations ponctuelles à la demande</li>
+              <li>Courses, pressing, entretien</li>
+              <li>Gestion de locations ponctuelles à la demande</li>
             </ul>
-            <a href="#contact" class="btn btn--outline btn--block">Composer ma formule</a>
+            <a class="btn btn--ghost btn--dark-text" data-wa data-wa-text="Bonjour Jad, je souhaite un devis pour la conciergerie privée / intendance de ma résidence.">Composer ma formule</a>
           </article>
         </div>
 
-        <!-- FAQ -->
-        <div class="faq reveal">
-          <h3 class="faq__title">Questions fréquentes</h3>
-          <details class="faq__item">
-            <summary>Puis-je continuer à utiliser mon bien quand je le souhaite ?</summary>
-            <p>Oui. Vous bloquez librement les dates dans votre espace propriétaire. Nous vous demandons simplement un préavis de 7 jours pour organiser le calendrier.</p>
-          </details>
-          <details class="faq__item">
-            <summary>Comment et quand suis-je payé ?</summary>
-            <p>Les plateformes versent les revenus sur votre compte. Nous vous facturons notre commission mensuellement sur base du relevé détaillé, envoyé le 5 de chaque mois.</p>
-          </details>
-          <details class="faq__item">
-            <summary>Que se passe-t-il en cas de dégâts ?</summary>
-            <p>Nous vérifions l'identité des voyageurs, activons les garanties des plateformes (AirCover, etc.) et gérons le dossier de A à Z. Nos partenaires artisans interviennent sous 48 h.</p>
-          </details>
-          <details class="faq__item">
-            <summary>Mon bien est-il éligible à la location courte durée à Bruxelles ?</summary>
-            <p>Cela dépend de son affectation urbanistique, du règlement de copropriété et des normes de sécurité. Nous réalisons un pré-audit gratuit avant toute signature pour le vérifier.</p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         TÉMOIGNAGES
-         ============================================================ -->
-    <section class="section testimonials">
-      <div class="container">
-        <div class="section__head reveal">
-          <p class="eyebrow">Ils nous font confiance</p>
-          <h2>Des propriétaires <em>sereins</em>, des voyageurs enchantés</h2>
-        </div>
-        <div class="testimonials__grid">
-          <blockquote class="testimonial reveal">
-            <p>« Mon appartement au Châtelain était loué 950 € en bail classique. Avec Maison Ambre, je perçois en moyenne 1 750 € nets par mois, sans lever le petit doigt. »</p>
-            <footer><strong>Sophie L.</strong><span>Propriétaire · Ixelles (Châtelain)</span></footer>
-          </blockquote>
-          <blockquote class="testimonial reveal">
-            <p>« Je vis à Londres et je voulais une équipe locale fiable. Le dossier d'enregistrement régional a été géré en trois semaines, et le reporting mensuel est impeccable. »</p>
-            <footer><strong>Thomas V.</strong><span>Propriétaire · Sablon</span></footer>
-          </blockquote>
-          <blockquote class="testimonial reveal">
-            <p>« Nous louons notre maison à Uccle pendant nos absences. Nous la retrouvons chaque fois impeccable, le linge changé et le frigo rempli. Un vrai service d'intendance. »</p>
-            <footer><strong>Famille D.</strong><span>Intendance · Uccle</span></footer>
-          </blockquote>
+        <div class="faq">
+          <h3>Questions fréquentes</h3>
+          <details><summary>Puis-je utiliser mon bien quand je le souhaite ?</summary><p>Oui. Vous bloquez les dates que vous voulez ; je demande simplement un préavis d'une semaine pour organiser le calendrier.</p></details>
+          <details><summary>Comment suis-je payé ?</summary><p>Les plateformes vous versent directement les revenus. Je vous envoie chaque mois un relevé détaillé et une facture de ma commission.</p></details>
+          <details><summary>Que se passe-t-il en cas de dégât ?</summary><p>Je vérifie l'identité des voyageurs et j'active les garanties des plateformes. Je gère le dossier et l'intervention, et vous tiens informé à chaque étape.</p></details>
+          <details><summary>Mon bien est-il éligible à la courte durée ?</summary><p>Cela dépend de l'affectation urbanistique, du règlement de copropriété et des normes de sécurité. Je fais un pré-audit gratuit avant tout engagement.</p></details>
         </div>
       </div>
     </section>
@@ -520,44 +315,22 @@
          ============================================================ -->
     <section class="section contact" id="contact">
       <div class="container contact__grid">
-        <div class="reveal">
+        <div>
           <p class="eyebrow">Contact</p>
-          <h2>Parlons de <em>votre bien</em></h2>
-          <p class="section__lead">Réponse sous 24 h ouvrées. Audit gratuit sur place à Bruxelles, sans engagement.</p>
+          <h2>Parlons de votre bien</h2>
+          <p class="section__lead">Le plus simple est WhatsApp : je réponds généralement dans la journée. Le formulaire ci-contre prépare le message pour vous.</p>
           <ul class="contact__info">
-            <li>
-              <span class="contact__icon" aria-hidden="true">📍</span>
-              <span>Rue du Bailli 47<br>1050 Ixelles, Bruxelles</span>
-            </li>
-            <li>
-              <span class="contact__icon" aria-hidden="true">📞</span>
-              <a href="tel:+3225550147">+32 2 555 01 47</a>
-            </li>
-            <li>
-              <span class="contact__icon" aria-hidden="true">✉️</span>
-              <a href="mailto:bonjour@maisonambre.be">bonjour@maisonambre.be</a>
-            </li>
-            <li>
-              <span class="contact__icon" aria-hidden="true">🕘</span>
-              <span>Lun–Ven 9h–19h · Astreinte voyageurs 24/7</span>
-            </li>
+            <li><span>WhatsApp / téléphone</span><a href="tel:+32495825694">+32 495 82 56 94</a></li>
+            <li><span>E-mail</span><a href="mailto:jadbesri9@gmail.com">jadbesri9@gmail.com</a></li>
+            <li><span>Zone</span>Région de Bruxelles-Capitale</li>
           </ul>
         </div>
 
-        <form class="contact__form reveal" id="contact-form" novalidate>
-          <div class="field-row">
-            <div class="field">
-              <label for="c-name">Nom complet *</label>
-              <input type="text" id="c-name" name="name" autocomplete="name" required>
-            </div>
-            <div class="field">
-              <label for="c-phone">Téléphone</label>
-              <input type="tel" id="c-phone" name="phone" autocomplete="tel" placeholder="+32 …">
-            </div>
-          </div>
+        <!-- Le formulaire n'envoie rien à un serveur : il compose un message et ouvre WhatsApp -->
+        <form class="contact__form" id="contact-form" novalidate>
           <div class="field">
-            <label for="c-email">E-mail *</label>
-            <input type="email" id="c-email" name="email" autocomplete="email" required>
+            <label for="c-name">Votre prénom et nom</label>
+            <input type="text" id="c-name" name="name" autocomplete="name" required>
           </div>
           <div class="field-row">
             <div class="field">
@@ -565,23 +338,23 @@
               <select id="c-zone" name="zone"></select>
             </div>
             <div class="field">
-              <label for="c-service">Service souhaité</label>
+              <label for="c-service">Besoin</label>
               <select id="c-service" name="service">
-                <option value="gestion">Gestion locative Airbnb</option>
-                <option value="conciergerie">Conciergerie privée / intendance</option>
-                <option value="autre">Autre / je ne sais pas encore</option>
+                <option value="la gestion locative courte durée">Gestion locative (Airbnb, Booking)</option>
+                <option value="la conciergerie privée / intendance">Conciergerie privée / intendance</option>
+                <option value="une question générale">Je ne sais pas encore</option>
               </select>
             </div>
           </div>
           <div class="field">
-            <label for="c-message">Votre message</label>
-            <textarea id="c-message" name="message" rows="4" placeholder="Décrivez votre bien (adresse approximative, surface, état, disponibilité…)"></textarea>
+            <label for="c-message">Quelques mots sur votre bien</label>
+            <textarea id="c-message" name="message" rows="4" placeholder="Type de bien, nombre de chambres, quartier, disponibilité…"></textarea>
           </div>
-          <label class="checkbox">
-            <input type="checkbox" id="c-consent" name="consent" required>
-            <span>J'accepte que mes données soient utilisées pour être recontacté(e) dans le cadre de ma demande. *</span>
-          </label>
-          <button type="submit" class="btn btn--gold btn--block">Envoyer ma demande</button>
+          <button type="submit" class="btn btn--wa btn--block">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+            Envoyer sur WhatsApp
+          </button>
+          <p class="form__hint">WhatsApp s'ouvre avec votre message pré-rempli ; vous n'avez plus qu'à l'envoyer. Vous préférez l'e-mail ? <a href="mailto:jadbesri9@gmail.com">jadbesri9@gmail.com</a></p>
           <p class="form__status" id="form-status" role="status"></p>
         </form>
       </div>
@@ -593,62 +366,29 @@
        FOOTER
        ============================================================ -->
   <footer class="footer">
-    <div class="container footer__grid">
-      <div class="footer__brand">
-        <a href="#accueil" class="logo logo--light" aria-label="Maison Ambre">
-          <span class="logo__mark" aria-hidden="true">A</span>
-          <span class="logo__text">Maison <em>Ambre</em><small>Conciergerie · Bruxelles</small></span>
-        </a>
-        <p>Conciergerie haut de gamme et gestion locative courte durée dans la Région de Bruxelles-Capitale.</p>
-        <ul class="social" aria-label="Réseaux sociaux">
-          <li><a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a></li>
-          <li><a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.5M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg></a></li>
-          <li><a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 8h2V5h-2a3 3 0 0 0-3 3v2H9v3h2v7h3v-7h2l1-3h-3V8z"/></svg></a></li>
-        </ul>
-      </div>
-
+    <div class="container footer__inner">
       <div>
-        <h4>Navigation</h4>
-        <ul class="footer__links">
-          <li><a href="#services">Services</a></li>
-          <li><a href="#zones">Zones couvertes</a></li>
-          <li><a href="#simulateur">Simulateur de revenus</a></li>
-          <li><a href="#tarifs">Tarifs</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+        <p class="footer__brand">Jad Besri — Conciergerie & gestion locative, Bruxelles</p>
+        <p class="footer__contact"><a href="tel:+32495825694">+32 495 82 56 94</a> · <a href="mailto:jadbesri9@gmail.com">jadbesri9@gmail.com</a></p>
       </div>
-
-      <div>
-        <h4>Quartiers</h4>
-        <ul class="footer__links">
-          <li><a href="#zones">Ixelles & Châtelain</a></li>
-          <li><a href="#zones">Sablon & Centre</a></li>
-          <li><a href="#zones">Quartier Européen</a></li>
-          <li><a href="#zones">Louise & Uccle</a></li>
-          <li><a href="#zones">Saint-Gilles & Etterbeek</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4>Contact</h4>
-        <address class="footer__address">
-          Maison Ambre SRL<br>
-          Rue du Bailli 47, 1050 Ixelles<br>
-          <a href="tel:+3225550147">+32 2 555 01 47</a><br>
-          <a href="mailto:bonjour@maisonambre.be">bonjour@maisonambre.be</a>
-        </address>
-      </div>
-    </div>
-
-    <div class="container footer__bottom">
-      <p>© <span id="year"></span> Maison Ambre SRL · BCE 0000.000.000 · Bruxelles</p>
-      <ul class="footer__legal">
-        <li><a href="#">Mentions légales</a></li>
-        <li><a href="#">Politique de confidentialité</a></li>
-        <li><a href="#">Cookies</a></li>
+      <ul class="footer__links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#zones">Zones</a></li>
+        <li><a href="#simulateur">Simulateur</a></li>
+        <li><a href="#tarifs">Tarifs</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
+    <div class="container footer__bottom">
+      <p>© <span id="year"></span> Jad Besri · Bruxelles</p>
+      <p><a href="#" id="legal-link">Mentions légales</a></p>
+    </div>
   </footer>
+
+  <!-- Bouton WhatsApp flottant -->
+  <a class="wa-float" data-wa data-wa-text="Bonjour Jad, je vous contacte depuis votre site." aria-label="Discuter sur WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+  </a>
 
   <script src="js/main.js" defer></script>
 </body>

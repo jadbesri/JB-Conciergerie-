@@ -1,27 +1,27 @@
-# Maison Ambre — Site vitrine conciergerie Bruxelles
+# Jad Besri — Conciergerie Bruxelles
 
-Site statique (HTML / CSS / JS vanilla, aucune dépendance ni étape de build).
+Site vitrine statique (HTML / CSS / JS, sans dépendance ni build).
 
 ```
 conciergerie-bruxelles/
-├── index.html      # Structure de la page (header, hero, services, zones, simulateur, tarifs, contact, footer)
-├── css/style.css   # Styles mobile-first, variables de thème en tête de fichier
-└── js/main.js      # Données quartiers, simulateur, menu, onglets, validation formulaire
+├── index.html      # page unique
+├── css/style.css   # styles (variables de couleurs en tête de fichier)
+├── js/main.js      # WhatsApp, quartiers, simulateur, formulaire
+└── images/hero.jpg # photo d'accueil (à déposer)
 ```
 
-## Lancer en local
-Ouvrez simplement `index.html` dans un navigateur, ou servez le dossier :
-
-```bash
-python3 -m http.server 8000
-```
+## Contact
+Tous les boutons ouvrent WhatsApp (+32 495 82 56 94). Le formulaire de contact
+compose le message puis ouvre WhatsApp : aucun serveur nécessaire.
+Numéro à modifier dans `js/main.js` (`WHATSAPP_NUMBER`).
 
 ## Personnaliser
-- **Couleurs / polices** : variables `:root` en haut de `css/style.css`.
-- **Quartiers, prix / nuit, occupation, loyers** : tableau `ZONES` en haut de `js/main.js`.
-- **Modèle du simulateur** (commission, multiplicateurs, calibration) : objet `MODEL` dans `js/main.js`.
-- **Envoi du formulaire de contact** : remplacer le bloc `setTimeout` (section 8 de `js/main.js`) par un appel `fetch` vers Formspree, Netlify Forms ou votre API.
-- **Coordonnées / mentions légales** : sections `#contact` et `<footer>` dans `index.html`.
+- Photo d'accueil : déposer `images/hero.jpg` (paysage, ≥ 1600 px de large).
+- Quartiers, prix/nuit, occupation, loyers : tableau `ZONES` dans `js/main.js`.
+- Couleurs / polices : variables `:root` dans `css/style.css`.
 
-## Déploiement
-Dossier statique : déposable tel quel sur Netlify, Vercel, GitHub Pages, OVH, Combell, etc.
+## Lancer en local
+```bash
+ruby -run -e httpd . -p 8000
+```
+puis ouvrir http://localhost:8000
