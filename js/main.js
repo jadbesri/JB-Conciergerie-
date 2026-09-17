@@ -27,7 +27,7 @@
    * ⚠️ Chiffres indicatifs, à ajuster avec vos observations réelles.
    */
   const ZONES = [
-    { id: 'ixelles', name: 'Ixelles', postal: '1050',
+    { id: 'ixelles', lat: 50.8275, lng: 4.3690, codes: ['1050'], name: 'Ixelles', postal: '1050',
       desc: 'La commune la plus demandée : cafés du Châtelain, étangs d\'Ixelles, Flagey et l\'avenue Louise.',
       quartiers: [
         { name: 'Châtelain', adr: 118, occ: 0.80, rent: 1050, hot: true },
@@ -37,7 +37,7 @@
         { name: 'Matongé', adr: 98, occ: 0.76, rent: 920 },
         { name: 'Brugmann', adr: 112, occ: 0.75, rent: 1080 }
       ]},
-    { id: 'bruxelles', name: 'Bruxelles-Ville', postal: '1000',
+    { id: 'bruxelles', lat: 50.8467, lng: 4.3525, codes: ['1000', '1020', '1120', '1130'], name: 'Bruxelles-Ville', postal: '1000',
       desc: 'Le cœur historique : Grand-Place, Sablon, Dansaert et le Quartier Européen attirent tourisme et voyages d\'affaires toute l\'année.',
       quartiers: [
         { name: 'Grand-Place / Centre', adr: 135, occ: 0.84, rent: 1000, hot: true },
@@ -47,7 +47,7 @@
         { name: 'Marolles', adr: 108, occ: 0.78, rent: 900 },
         { name: 'Quartier Royal', adr: 132, occ: 0.79, rent: 1150 }
       ]},
-    { id: 'saint-gilles', name: 'Saint-Gilles', postal: '1060',
+    { id: 'saint-gilles', lat: 50.8265, lng: 4.3450, codes: ['1060'], name: 'Saint-Gilles', postal: '1060',
       desc: 'Ambiance bohème et Art nouveau : le Parvis, la Maison Horta et la gare du Midi (Thalys, Eurostar).',
       quartiers: [
         { name: 'Parvis', adr: 98, occ: 0.79, rent: 920, hot: true },
@@ -55,7 +55,7 @@
         { name: 'Gare du Midi', adr: 88, occ: 0.80, rent: 850 },
         { name: 'Bethléem', adr: 82, occ: 0.72, rent: 800 }
       ]},
-    { id: 'uccle', name: 'Uccle', postal: '1180',
+    { id: 'uccle', lat: 50.8020, lng: 4.3370, codes: ['1180'], name: 'Uccle', postal: '1180',
       desc: 'Résidentiel et vert : maisons de maître, Bois de la Cambre, écoles internationales.',
       quartiers: [
         { name: 'Fort Jaco', adr: 120, occ: 0.68, rent: 1200, hot: true },
@@ -63,53 +63,53 @@
         { name: 'Observatoire', adr: 104, occ: 0.70, rent: 1050 },
         { name: 'Saint-Job', adr: 96, occ: 0.66, rent: 980 }
       ]},
-    { id: 'etterbeek', name: 'Etterbeek', postal: '1040',
+    { id: 'etterbeek', lat: 50.8367, lng: 4.3900, codes: ['1040'], name: 'Etterbeek', postal: '1040',
       desc: 'Aux portes des institutions européennes et du Cinquantenaire : forte demande en semaine.',
       quartiers: [
         { name: 'Jourdan / Européen', adr: 118, occ: 0.81, rent: 1050, hot: true },
         { name: 'Cinquantenaire / Mérode', adr: 108, occ: 0.76, rent: 1000 },
         { name: 'La Chasse', adr: 90, occ: 0.73, rent: 880 }
       ]},
-    { id: 'schaerbeek', name: 'Schaerbeek', postal: '1030',
+    { id: 'schaerbeek', lat: 50.8620, lng: 4.3770, codes: ['1030'], name: 'Schaerbeek', postal: '1030',
       desc: 'Patrimoine Art nouveau et quartiers en plein essor, près de la gare du Nord.',
       quartiers: [
         { name: 'Diamant / Plasky', adr: 92, occ: 0.74, rent: 900, hot: true },
         { name: 'Dailly / Meiser', adr: 85, occ: 0.71, rent: 850 },
         { name: 'Josaphat', adr: 82, occ: 0.70, rent: 820 }
       ]},
-    { id: 'forest', name: 'Forest', postal: '1190',
+    { id: 'forest', lat: 50.8100, lng: 4.3170, codes: ['1190'], name: 'Forest', postal: '1190',
       desc: 'Entre Saint-Gilles et Uccle : Altitude 100, parc Duden, Forest National et le WIELS.',
       quartiers: [
         { name: 'Altitude 100', adr: 92, occ: 0.71, rent: 920 },
         { name: 'Parc de Forest', adr: 84, occ: 0.70, rent: 850 },
         { name: 'Wiels', adr: 80, occ: 0.69, rent: 800 }
       ]},
-    { id: 'woluwe', name: 'Woluwe', postal: '1150 · 1200',
+    { id: 'woluwe', lat: 50.8420, lng: 4.4300, codes: ['1150', '1200'], name: 'Woluwe', postal: '1150 · 1200',
       desc: 'Woluwe-Saint-Pierre et Saint-Lambert : familles, expatriés, proximité de l\'aéroport.',
       quartiers: [
         { name: 'Montgomery / Stockel', adr: 105, occ: 0.70, rent: 1100, hot: true },
         { name: 'Tomberg', adr: 90, occ: 0.68, rent: 950 },
         { name: 'Georges Henri', adr: 95, occ: 0.69, rent: 980 }
       ]},
-    { id: 'auderghem', name: 'Auderghem', postal: '1160',
+    { id: 'auderghem', lat: 50.8150, lng: 4.4300, codes: ['1160'], name: 'Auderghem', postal: '1160',
       desc: 'Verdure et accessibilité : forêt de Soignes, boulevard du Souverain, accès direct à l\'E411.',
       quartiers: [
         { name: 'Souverain', adr: 88, occ: 0.67, rent: 950 },
         { name: 'Chant d\'Oiseau', adr: 92, occ: 0.66, rent: 980 }
       ]},
-    { id: 'watermael', name: 'Watermael-Boitsfort', postal: '1170',
+    { id: 'watermael', lat: 50.7950, lng: 4.4150, codes: ['1170'], name: 'Watermael-Boitsfort', postal: '1170',
       desc: 'La commune la plus verte de la Région : cités-jardins et calme à 15 minutes du centre.',
       quartiers: [
         { name: 'Boitsfort centre', adr: 90, occ: 0.64, rent: 1000 },
         { name: 'Le Logis / Floréal', adr: 84, occ: 0.62, rent: 920 }
       ]},
-    { id: 'jette', name: 'Jette', postal: '1090',
+    { id: 'jette', lat: 50.8780, lng: 4.3260, codes: ['1090'], name: 'Jette', postal: '1090',
       desc: 'Près de l\'UZ Brussel et de l\'Atomium : séjours médicaux et familiaux, bon rendement.',
       quartiers: [
         { name: 'Miroir', adr: 78, occ: 0.70, rent: 800 },
         { name: 'Atomium / Laeken', adr: 82, occ: 0.72, rent: 820 }
       ]},
-    { id: 'anderlecht', name: 'Anderlecht', postal: '1070',
+    { id: 'anderlecht', lat: 50.8380, lng: 4.3080, codes: ['1070'], name: 'Anderlecht', postal: '1070',
       desc: 'En pleine transformation, à quelques minutes de la gare du Midi, avec des biens spacieux.',
       quartiers: [
         { name: 'Saint-Guidon', adr: 78, occ: 0.71, rent: 800 },
@@ -327,6 +327,7 @@
       t.tabIndex = on ? 0 : -1;
     });
     renderZonePanel(zoneId);
+    if (window.highlightZonePin) window.highlightZonePin(zoneId);
   }
   renderZonePanel(ZONES[0].id);
 
@@ -347,6 +348,89 @@
     runSimulation();
     $('#simulateur').scrollIntoView({ behavior: 'smooth' });
   });
+
+
+/* ---------- 5b. CARTE INTERACTIVE ---------------------------------------- */
+(function initMap() {
+  const mapEl = $('#map');
+  if (!mapEl || typeof L === 'undefined') return;
+
+  const map = L.map(mapEl, { scrollWheelZoom: false }).setView([50.8380, 4.3720], 12);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 18,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  }).addTo(map);
+
+  // Un repère par commune ; clic = sélection de l'onglet correspondant
+  const pins = {};
+  ZONES.forEach(z => {
+    const icon = L.divIcon({ className: '', html: '<div class="map-pin" data-zone="' + z.id + '"></div>', iconSize: [16, 16], iconAnchor: [8, 8] });
+    const m = L.marker([z.lat, z.lng], { icon, title: z.name }).addTo(map);
+    m.bindPopup('<strong>' + z.name + '</strong>' + z.quartiers.map(q => q.name).join(' · ') +
+                '<br><span class="popup-link" data-zone-link="' + z.id + '">Voir les quartiers →</span>');
+    m.on('click', () => selectZone(z.id));
+    pins[z.id] = m;
+  });
+  map.on('popupopen', e => {
+    const link = e.popup.getElement().querySelector('[data-zone-link]');
+    if (link) link.addEventListener('click', () => {
+      selectZone(link.dataset.zoneLink);
+      map.closePopup();
+      $('#zones-panel').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+  });
+  window.highlightZonePin = zoneId => {
+    $$('.map-pin').forEach(p => p.classList.toggle('is-active', p.dataset.zone === zoneId));
+  };
+  window.highlightZonePin(ZONES[0].id);
+
+  // Recherche d'adresse (géocodage OpenStreetMap / Nominatim, limité à la Région bruxelloise)
+  const form = $('#map-search');
+  const status = $('#map-status');
+  let homeMarker = null;
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    const q = $('#map-address').value.trim();
+    if (q.length < 4) { status.className = 'map-status is-warn'; status.textContent = 'Entrez une adresse (rue + numéro, ou rue + code postal).'; return; }
+    status.className = 'map-status';
+    status.textContent = 'Recherche en cours…';
+    try {
+      const url = 'https://nominatim.openstreetmap.org/search?format=json&limit=1&addressdetails=1&countrycodes=be' +
+                  '&viewbox=4.24,50.93,4.49,50.76&bounded=1&q=' + encodeURIComponent(q);
+      const res = await fetch(url, { headers: { 'Accept-Language': 'fr' } });
+      const data = await res.json();
+      if (!data.length) { status.className = 'map-status is-warn'; status.textContent = 'Adresse introuvable dans la Région de Bruxelles-Capitale. Essayez avec le code postal.'; return; }
+
+      const r = data[0];
+      const lat = parseFloat(r.lat), lng = parseFloat(r.lon);
+      const homeIcon = L.divIcon({ className: '', html: '<div class="map-home"></div>', iconSize: [20, 20], iconAnchor: [10, 10] });
+      if (homeMarker) map.removeLayer(homeMarker);
+      homeMarker = L.marker([lat, lng], { icon: homeIcon, title: 'Votre logement' }).addTo(map);
+      map.flyTo([lat, lng], 14, { duration: .8 });
+
+      // Commune reconnue via le code postal, sinon via le nom renvoyé
+      const a = r.address || {};
+      const postcode = String(a.postcode || '').trim();
+      const label = [a.city_district, a.suburb, a.municipality, a.town, a.city].filter(Boolean).join(' / ');
+      const zone = ZONES.find(z => z.codes.includes(postcode)) ||
+                   ZONES.find(z => label.toLowerCase().includes(z.name.toLowerCase().split('-')[0]));
+      const short = r.display_name.split(',').slice(0, 2).join(',');
+      if (zone) {
+        selectZone(zone.id);
+        status.className = 'map-status is-ok';
+        status.textContent = short + ' — bonne nouvelle, ' + zone.name + ' fait partie de nos communes couvertes.';
+        $('#zones-panel').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      } else {
+        status.className = 'map-status is-warn';
+        status.textContent = short + ' — cette commune n’est pas encore listée, mais nous étudions chaque demande : écrivez-nous sur WhatsApp.';
+      }
+    } catch (err) {
+      status.className = 'map-status is-warn';
+      status.textContent = 'La recherche d’adresse est momentanément indisponible. Choisissez votre commune ci-dessous.';
+    }
+  });
+})();
 
 
   /* ---------- 6. SIMULATEUR ------------------------------------------------ */

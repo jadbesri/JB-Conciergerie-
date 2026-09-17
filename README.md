@@ -35,3 +35,9 @@ puis ouvrir http://localhost:8000
      image: 'images/chatelain.jpg', tag: 'Airbnb', url: 'https://airbnb.com/…' },
    ```
 Les emplacements « Bientôt » disparaissent automatiquement au fur et à mesure.
+
+## Carte interactive (section « Zones couvertes »)
+- Carte OpenStreetMap via Leaflet (chargé depuis cdnjs, aucune clé nécessaire).
+- Un repère par commune : coordonnées `lat` / `lng` et codes postaux `codes` dans `ZONES` (`js/main.js`).
+- Recherche d'adresse : géocodage Nominatim (OpenStreetMap), limité à la Région bruxelloise.
+  Usage gratuit pour un trafic modeste ; pour un gros trafic, prévoir un service de géocodage dédié.

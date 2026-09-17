@@ -297,6 +297,28 @@ input[type="range"] { width: 100%; accent-color: var(--green); cursor: pointer; 
 .zones__note { text-align: center; color: var(--muted); font-size: .92rem; margin: 28px auto 0; max-width: 620px; }
 .zones__note a { color: var(--green); font-weight: 700; text-decoration: underline; cursor: pointer; }
 
+/* Carte interactive */
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.zones__map-wrap { margin-bottom: 24px; }
+.map-search { display: flex; flex-direction: column; gap: 10px; margin-bottom: 12px; }
+.map-search input[type="text"] { flex: 1; }
+.zones__map {
+  height: 360px; border-radius: var(--radius); border: 1px solid var(--line);
+  box-shadow: var(--shadow); background: var(--cream-dark); overflow: hidden; z-index: 0;
+}
+.map-status { font-size: .88rem; color: var(--muted); margin: 10px 0 0; min-height: 1.4em; }
+.map-status.is-ok { color: var(--success); font-weight: 600; }
+.map-status.is-warn { color: var(--error); font-weight: 600; }
+/* Repères de commune : pastille verte, plus grande pour la commune sélectionnée */
+.map-pin { width: 16px; height: 16px; border-radius: 50%; background: var(--green); border: 2.5px solid var(--cream); box-shadow: 0 2px 8px rgba(0,0,0,.35); transition: transform .2s; }
+.map-pin.is-active { transform: scale(1.5); background: var(--sand-dark); }
+.map-home { width: 20px; height: 20px; border-radius: 50%; background: var(--wa); border: 3px solid #fff; box-shadow: 0 0 0 6px rgba(37, 211, 102, .25), 0 2px 8px rgba(0,0,0,.35); }
+.leaflet-container { font-family: var(--font-sans); }
+.leaflet-popup-content-wrapper { border-radius: 10px; box-shadow: var(--shadow-lg); }
+.leaflet-popup-content { margin: 12px 16px; font-size: .9rem; }
+.leaflet-popup-content strong { font-family: var(--font-serif); font-size: 1.15rem; color: var(--green); display: block; }
+.leaflet-popup-content .popup-link { display: inline-block; margin-top: 6px; color: var(--green); font-weight: 700; text-decoration: underline; cursor: pointer; }
+
 /* ---------- 8. SIMULATEUR ----------------------------------------------- */
 .simulator { background: linear-gradient(180deg, var(--green-deep) 0%, var(--green) 100%); color: var(--cream); }
 .simulator__card { background: var(--white); color: var(--ink); border-radius: var(--radius); box-shadow: var(--shadow-lg); overflow: hidden; display: grid; }
@@ -430,6 +452,8 @@ input[type="range"] { width: 100%; accent-color: var(--green); cursor: pointer; 
   .pricing__grid { grid-template-columns: 1.1fr 1fr; align-items: start; }
   .contact__grid { grid-template-columns: 1fr 1.25fr; align-items: start; gap: 48px; }
   .zones__layout { grid-template-columns: 240px 1fr; align-items: start; }
+  .map-search { flex-direction: row; }
+  .zones__map { height: 420px; }
   .zones__tabs { flex-direction: column; overflow: visible; }
   .zone-tab { text-align: left; padding: 12px 18px; }
   .zones__panel { position: sticky; top: calc(var(--header-h) + 24px); }
