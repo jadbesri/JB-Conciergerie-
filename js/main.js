@@ -189,7 +189,7 @@
     return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text || '')}`;
   }
   $$('[data-wa]').forEach(el => {
-    el.setAttribute('href', waLink(el.dataset.waText || 'Bonjour Jad,'));
+    el.setAttribute('href', waLink(el.dataset.waText || 'Bonjour,'));
     el.setAttribute('target', '_blank');
     el.setAttribute('rel', 'noopener');
   });
@@ -397,7 +397,7 @@
 
     const { zone, q } = findQuartier(simZone.value);
     $('#sim-cta').setAttribute('href', waLink(
-      `Bonjour Jad, j'ai fait une simulation sur votre site pour un bien (${ROOM_LABELS[rooms]}) à ${zone.name} – ${q.name} : environ ${euro.format(r.gross)} brut par mois. J'aimerais une estimation détaillée.`
+      `Bonjour, j'ai fait une simulation sur votre site pour un bien (${ROOM_LABELS[rooms]}) à ${zone.name} – ${q.name} : environ ${euro.format(r.gross)} brut par mois. J'aimerais une estimation détaillée.`
     ));
   }
   simForm.addEventListener('input', runSimulation);
@@ -437,7 +437,7 @@
     status.textContent = '';
     const zone = cZone.value ? findQuartier(cZone.value) : null;
     const lines = [
-      `Bonjour Jad, je m'appelle ${name.value.trim()}.`,
+      `Bonjour, je m'appelle ${name.value.trim()}.`,
       `Je vous contacte pour ${$('#c-service').value}.`,
       zone ? `Mon bien se situe à ${zone.zone.name} (${zone.q.name}).` : '',
       $('#c-message').value.trim()
@@ -450,7 +450,7 @@
   $('#year').textContent = new Date().getFullYear();
   $('#legal-link').addEventListener('click', e => {
     e.preventDefault();
-    alert('Éditeur du site : JB Conciergerie (Jad Besri), Bruxelles — jadbesri9@gmail.com — +32 495 82 56 94.\nLes estimations du simulateur sont indicatives et non contractuelles.');
+    alert('Éditeur du site : JB Conciergerie, Bruxelles — jadbesri9@gmail.com — +32 495 82 56 94.\nLes estimations du simulateur sont indicatives et non contractuelles.');
   });
 
 })();
