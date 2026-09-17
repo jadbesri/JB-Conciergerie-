@@ -172,6 +172,13 @@ const ZONES = [
     return { zone, q: zone.quartiers.find(x => x.name === qName) || zone.quartiers[0] };
   }
 
+/** Quartier « moyen » d'une commune : moyenne des prix, occupations et loyers */
+function zoneAverage(zone) {
+  const n = zone.quartiers.length;
+  const sum = k => zone.quartiers.reduce((s, q) => s + q[k], 0) / n;
+  return { name: zone.name, adr: sum('adr'), occ: sum('occ'), rent: sum('rent') };
+}
+
   function fillZoneSelect(select, placeholder) {
     if (!select) return;
     select.innerHTML = '';
@@ -431,11 +438,12 @@ const ZONES = [
       if (zone) {
         selectZone(zone.id);
         status.className = 'map-status is-ok';
-        status.innerHTML = short + ' — bonne nouvelle, <strong>' + zone.name + '</strong> fait partie de nos communes couvertes. ' +
-          '<a href="#zones">Voir les quartiers</a> · <a href="#simulateur">Estimer mes revenus</a>';
+        status.innerHTML = short + ' — bonne nouvelle, <strong>' + zone.name + '</strong> fait partie de nos communes couvertes. Voici une première estimation :';
+        window.showMapEstimate(zone, short);
       } else {
         status.className = 'map-status is-warn';
         status.textContent = short + ' — cette commune n’est pas encore listée, mais nous étudions chaque demande : écrivez-nous sur WhatsApp.';
+        $('#map-result').hidden = true;
       }
     } catch (err) {
       console.error('Recherche d’adresse :', err);
@@ -454,8 +462,8 @@ const ZONES = [
   fillZoneSelect(simZone);
   simZone.value = 'ixelles|Châtelain';
 
-  function estimate({ zoneKey, rooms, type, standing }) {
-    const { q } = findQuartier(zoneKey) || findQuartier('ixelles|Châtelain');
+  function estimate({ zoneKey, q: qOverride, rooms, type, standing }) {
+    const q = qOverride || (findQuartier(zoneKey) || findQuartier('ixelles|Châtelain')).q;
     const st = MODEL.standing[standing] || MODEL.standing.standard;
     const adr = q.adr * MODEL.roomsAdr[rooms] * (MODEL.type[type] || 1) * st.adr;
     const occ = Math.min(0.95, q.occ * MODEL.occCalibration * MODEL.roomsOcc[rooms] * st.occ);
@@ -500,6 +508,48 @@ const ZONES = [
   simForm.addEventListener('input', runSimulation);
   simForm.addEventListener('change', runSimulation);
   runSimulation();
+
+
+/* ---------- 6b. ESTIMATION IMMÉDIATE SOUS LA CARTE ----------------------- */
+let mapCtx = null;   // { zone, address }
+
+function renderMapEstimate() {
+  if (!mapCtx) return;
+  const rooms = parseInt($('#mr-rooms').value, 10);
+  const type = $('#mr-type').value;
+  const standing = $('#mr-standing').value;
+  const r = estimate({ q: zoneAverage(mapCtx.zone), rooms, type, standing });
+
+  $('#mr-gross').textContent = euro.format(r.gross);
+  $('#mr-range').textContent = `entre ${euro.format(r.low)} et ${euro.format(r.high)} selon la saison`;
+  $('#mr-net').textContent = euro.format(r.net);
+  $('#mr-rent').textContent = euro.format(r.rent);
+  $('#mr-adr').textContent = `${r.adr} € · ${r.occ} %`;
+
+  $('#mr-wa').setAttribute('href', waLink(
+    `Bonjour, j'ai fait une estimation sur votre site pour mon bien situé ${mapCtx.address} (${mapCtx.zone.name}, ${ROOM_LABELS[rooms]}) : environ ${euro.format(r.gross)} brut par mois. J'aimerais une estimation détaillée.`
+  ));
+
+  // Le simulateur principal reprend les mêmes réglages (quartier phare de la commune)
+  const hot = mapCtx.zone.quartiers.find(q => q.hot) || mapCtx.zone.quartiers[0];
+  simZone.value = `${mapCtx.zone.id}|${hot.name}`;
+  simRooms.value = String(rooms);
+  simType.value = type;
+  const radio = simForm.querySelector(`input[name="standing"][value="${standing}"]`);
+  if (radio) radio.checked = true;
+  runSimulation();
+}
+
+window.showMapEstimate = (zone, address) => {
+  mapCtx = { zone, address };
+  $('#mr-title').textContent = address;
+  $('#mr-sub').textContent = `${zone.name} (${zone.postal}) — moyenne des quartiers de la commune`;
+  renderMapEstimate();
+  const box = $('#map-result');
+  box.hidden = false;
+  box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+};
+$('#mr-form').addEventListener('change', renderMapEstimate);
 
 
   /* ---------- 7. FORMULAIRE RAPIDE (HERO) → SIMULATEUR ---------------------- */

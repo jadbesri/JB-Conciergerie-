@@ -322,6 +322,21 @@ input[type="range"] { width: 100%; accent-color: var(--green); cursor: pointer; 
 .leaflet-popup-content strong { font-family: var(--font-serif); font-size: 1.15rem; color: var(--green); display: block; }
 .leaflet-popup-content .popup-link { display: inline-block; margin-top: 6px; color: var(--green); font-weight: 700; text-decoration: underline; cursor: pointer; }
 
+/* Résultat sous la carte : estimation immédiate pour l'adresse trouvée */
+.map-result { margin-top: 18px; background: var(--cream); border: 1.5px solid var(--green); border-radius: var(--radius); padding: 24px 22px; box-shadow: var(--shadow); }
+.map-result__head h3 { font-size: 1.5rem; margin: 0 0 4px; }
+.map-result__sub { color: var(--muted); font-size: .9rem; margin: 0 0 16px; }
+.map-result__form { display: grid; gap: 0 14px; }
+.map-result__figures { display: grid; gap: 16px; padding: 18px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin: 4px 0 18px; }
+.map-result__main { text-align: center; }
+.map-result__value { display: block; font-family: var(--font-serif); font-size: 2.6rem; font-weight: 600; color: var(--green); line-height: 1.1; margin: 4px 0 2px; }
+.map-result__list { margin: 0; display: grid; gap: 8px; }
+.map-result__list div { display: flex; justify-content: space-between; gap: 12px; font-size: .9rem; }
+.map-result__list dt { color: var(--muted); }
+.map-result__list dd { margin: 0; font-weight: 700; color: var(--green); }
+.map-result__actions { display: flex; flex-direction: column; gap: 10px; }
+.map-result__actions .btn { width: 100%; }
+
 /* ---------- 8. SIMULATEUR ----------------------------------------------- */
 .simulator { background: linear-gradient(180deg, var(--green-deep) 0%, var(--green) 100%); color: var(--cream); }
 .simulator__card { background: var(--white); color: var(--ink); border-radius: var(--radius); box-shadow: var(--shadow-lg); overflow: hidden; display: grid; }
@@ -457,6 +472,10 @@ input[type="range"] { width: 100%; accent-color: var(--green); cursor: pointer; 
   .zones__layout { grid-template-columns: 240px 1fr; align-items: start; }
   .map-search { flex-direction: row; }
   .zones__map { height: 420px; }
+  .map-result__form { grid-template-columns: repeat(3, 1fr); }
+  .map-result__figures { grid-template-columns: 1fr 1.2fr; align-items: center; }
+  .map-result__actions { flex-direction: row; }
+  .map-result__actions .btn { width: auto; }
   .zones__tabs { flex-direction: column; overflow: visible; }
   .zone-tab { text-align: left; padding: 12px 18px; }
   .zones__panel { position: sticky; top: calc(var(--header-h) + 24px); }
