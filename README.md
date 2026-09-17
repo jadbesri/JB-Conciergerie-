@@ -41,3 +41,8 @@ Les emplacements « Bientôt » disparaissent automatiquement au fur et à mesur
 - Un repère par commune : coordonnées `lat` / `lng` et codes postaux `codes` dans `ZONES` (`js/main.js`).
 - Recherche d'adresse : géocodage Nominatim (OpenStreetMap), limité à la Région bruxelloise.
   Usage gratuit pour un trafic modeste ; pour un gros trafic, prévoir un service de géocodage dédié.
+
+## Sources des chiffres du simulateur (recalés en septembre 2026)
+- Courte durée : Airbtics (fév. 2025 → jan. 2026), AirDNA 2026, AirROI (août 2025 → juil. 2026).
+- Loyers classiques : Federia / Gazette de Bruxelles, baromètre sept. 2025.
+À rafraîchir chaque année dans `ZONES` (`js/main.js`).

@@ -297,9 +297,11 @@ input[type="range"] { width: 100%; accent-color: var(--green); cursor: pointer; 
 .zones__note { text-align: center; color: var(--muted); font-size: .92rem; margin: 28px auto 0; max-width: 620px; }
 .zones__note a { color: var(--green); font-weight: 700; text-decoration: underline; cursor: pointer; }
 
-/* Carte interactive */
+/* Carte interactive (section « Situer mon logement ») */
+.locate { background: var(--white); border-bottom: 1px solid var(--line); }
+.locate .section__head { margin-bottom: 24px; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-.zones__map-wrap { margin-bottom: 24px; }
+.zones__map-wrap { margin-bottom: 0; }
 .map-search { display: flex; flex-direction: column; gap: 10px; margin-bottom: 12px; }
 .map-search input[type="text"] { flex: 1; }
 .zones__map {
@@ -309,6 +311,7 @@ input[type="range"] { width: 100%; accent-color: var(--green); cursor: pointer; 
 .map-status { font-size: .88rem; color: var(--muted); margin: 10px 0 0; min-height: 1.4em; }
 .map-status.is-ok { color: var(--success); font-weight: 600; }
 .map-status.is-warn { color: var(--error); font-weight: 600; }
+.map-status a { color: var(--green); text-decoration: underline; font-weight: 700; }
 /* Repères de commune : pastille verte, plus grande pour la commune sélectionnée */
 .map-pin { width: 16px; height: 16px; border-radius: 50%; background: var(--green); border: 2.5px solid var(--cream); box-shadow: 0 2px 8px rgba(0,0,0,.35); transition: transform .2s; }
 .map-pin.is-active { transform: scale(1.5); background: var(--sand-dark); }

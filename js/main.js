@@ -21,101 +21,111 @@
   /** Numéro WhatsApp au format international, sans "+" ni espaces */
   const WHATSAPP_NUMBER = '32495825694';
 
-  /**
-   * adr = prix moyen / nuit (€) pour un 1 chambre standard · occ = occupation
-   * annuelle (0–1) · rent = loyer classique 1 chambre (€) · hot = forte demande
-   * ⚠️ Chiffres indicatifs, à ajuster avec vos observations réelles.
-   */
-  const ZONES = [
-    { id: 'ixelles', lat: 50.8275, lng: 4.3690, codes: ['1050'], name: 'Ixelles', postal: '1050',
-      desc: 'La commune la plus demandée : cafés du Châtelain, étangs d\'Ixelles, Flagey et l\'avenue Louise.',
-      quartiers: [
-        { name: 'Châtelain', adr: 118, occ: 0.80, rent: 1050, hot: true },
-        { name: 'Flagey', adr: 105, occ: 0.78, rent: 980, hot: true },
-        { name: 'Louise', adr: 125, occ: 0.79, rent: 1150, hot: true },
-        { name: 'Cimetière d\'Ixelles', adr: 92, occ: 0.74, rent: 900 },
-        { name: 'Matongé', adr: 98, occ: 0.76, rent: 920 },
-        { name: 'Brugmann', adr: 112, occ: 0.75, rent: 1080 }
-      ]},
-    { id: 'bruxelles', lat: 50.8467, lng: 4.3525, codes: ['1000', '1020', '1120', '1130'], name: 'Bruxelles-Ville', postal: '1000',
-      desc: 'Le cœur historique : Grand-Place, Sablon, Dansaert et le Quartier Européen attirent tourisme et voyages d\'affaires toute l\'année.',
-      quartiers: [
-        { name: 'Grand-Place / Centre', adr: 135, occ: 0.84, rent: 1000, hot: true },
-        { name: 'Sablon', adr: 145, occ: 0.80, rent: 1250, hot: true },
-        { name: 'Quartier Européen', adr: 128, occ: 0.82, rent: 1100, hot: true },
-        { name: 'Dansaert / Sainte-Catherine', adr: 122, occ: 0.81, rent: 1020 },
-        { name: 'Marolles', adr: 108, occ: 0.78, rent: 900 },
-        { name: 'Quartier Royal', adr: 132, occ: 0.79, rent: 1150 }
-      ]},
-    { id: 'saint-gilles', lat: 50.8265, lng: 4.3450, codes: ['1060'], name: 'Saint-Gilles', postal: '1060',
-      desc: 'Ambiance bohème et Art nouveau : le Parvis, la Maison Horta et la gare du Midi (Thalys, Eurostar).',
-      quartiers: [
-        { name: 'Parvis', adr: 98, occ: 0.79, rent: 920, hot: true },
-        { name: 'Ma Campagne', adr: 110, occ: 0.77, rent: 1000 },
-        { name: 'Gare du Midi', adr: 88, occ: 0.80, rent: 850 },
-        { name: 'Bethléem', adr: 82, occ: 0.72, rent: 800 }
-      ]},
-    { id: 'uccle', lat: 50.8020, lng: 4.3370, codes: ['1180'], name: 'Uccle', postal: '1180',
-      desc: 'Résidentiel et vert : maisons de maître, Bois de la Cambre, écoles internationales.',
-      quartiers: [
-        { name: 'Fort Jaco', adr: 120, occ: 0.68, rent: 1200, hot: true },
-        { name: 'Vanderkindere', adr: 108, occ: 0.72, rent: 1100 },
-        { name: 'Observatoire', adr: 104, occ: 0.70, rent: 1050 },
-        { name: 'Saint-Job', adr: 96, occ: 0.66, rent: 980 }
-      ]},
-    { id: 'etterbeek', lat: 50.8367, lng: 4.3900, codes: ['1040'], name: 'Etterbeek', postal: '1040',
-      desc: 'Aux portes des institutions européennes et du Cinquantenaire : forte demande en semaine.',
-      quartiers: [
-        { name: 'Jourdan / Européen', adr: 118, occ: 0.81, rent: 1050, hot: true },
-        { name: 'Cinquantenaire / Mérode', adr: 108, occ: 0.76, rent: 1000 },
-        { name: 'La Chasse', adr: 90, occ: 0.73, rent: 880 }
-      ]},
-    { id: 'schaerbeek', lat: 50.8620, lng: 4.3770, codes: ['1030'], name: 'Schaerbeek', postal: '1030',
-      desc: 'Patrimoine Art nouveau et quartiers en plein essor, près de la gare du Nord.',
-      quartiers: [
-        { name: 'Diamant / Plasky', adr: 92, occ: 0.74, rent: 900, hot: true },
-        { name: 'Dailly / Meiser', adr: 85, occ: 0.71, rent: 850 },
-        { name: 'Josaphat', adr: 82, occ: 0.70, rent: 820 }
-      ]},
-    { id: 'forest', lat: 50.8100, lng: 4.3170, codes: ['1190'], name: 'Forest', postal: '1190',
-      desc: 'Entre Saint-Gilles et Uccle : Altitude 100, parc Duden, Forest National et le WIELS.',
-      quartiers: [
-        { name: 'Altitude 100', adr: 92, occ: 0.71, rent: 920 },
-        { name: 'Parc de Forest', adr: 84, occ: 0.70, rent: 850 },
-        { name: 'Wiels', adr: 80, occ: 0.69, rent: 800 }
-      ]},
-    { id: 'woluwe', lat: 50.8420, lng: 4.4300, codes: ['1150', '1200'], name: 'Woluwe', postal: '1150 · 1200',
-      desc: 'Woluwe-Saint-Pierre et Saint-Lambert : familles, expatriés, proximité de l\'aéroport.',
-      quartiers: [
-        { name: 'Montgomery / Stockel', adr: 105, occ: 0.70, rent: 1100, hot: true },
-        { name: 'Tomberg', adr: 90, occ: 0.68, rent: 950 },
-        { name: 'Georges Henri', adr: 95, occ: 0.69, rent: 980 }
-      ]},
-    { id: 'auderghem', lat: 50.8150, lng: 4.4300, codes: ['1160'], name: 'Auderghem', postal: '1160',
-      desc: 'Verdure et accessibilité : forêt de Soignes, boulevard du Souverain, accès direct à l\'E411.',
-      quartiers: [
-        { name: 'Souverain', adr: 88, occ: 0.67, rent: 950 },
-        { name: 'Chant d\'Oiseau', adr: 92, occ: 0.66, rent: 980 }
-      ]},
-    { id: 'watermael', lat: 50.7950, lng: 4.4150, codes: ['1170'], name: 'Watermael-Boitsfort', postal: '1170',
-      desc: 'La commune la plus verte de la Région : cités-jardins et calme à 15 minutes du centre.',
-      quartiers: [
-        { name: 'Boitsfort centre', adr: 90, occ: 0.64, rent: 1000 },
-        { name: 'Le Logis / Floréal', adr: 84, occ: 0.62, rent: 920 }
-      ]},
-    { id: 'jette', lat: 50.8780, lng: 4.3260, codes: ['1090'], name: 'Jette', postal: '1090',
-      desc: 'Près de l\'UZ Brussel et de l\'Atomium : séjours médicaux et familiaux, bon rendement.',
-      quartiers: [
-        { name: 'Miroir', adr: 78, occ: 0.70, rent: 800 },
-        { name: 'Atomium / Laeken', adr: 82, occ: 0.72, rent: 820 }
-      ]},
-    { id: 'anderlecht', lat: 50.8380, lng: 4.3080, codes: ['1070'], name: 'Anderlecht', postal: '1070',
-      desc: 'En pleine transformation, à quelques minutes de la gare du Midi, avec des biens spacieux.',
-      quartiers: [
-        { name: 'Saint-Guidon', adr: 78, occ: 0.71, rent: 800 },
-        { name: 'Cureghem / Midi', adr: 74, occ: 0.73, rent: 760 }
-      ]}
-  ];
+/**
+ * Communes et quartiers — chiffres recalés en septembre 2026 sur :
+ *   · Airbtics (fév. 2025 → jan. 2026) : prix/nuit médian Bruxelles €106, Ixelles €106,
+ *     Etterbeek €93, Saint-Gilles €91, Sablon €134, Grand-Place €170
+ *   · AirDNA 2026 : ~€117/nuit, occupation 62 % · AirROI (août 2025 → juil. 2026) :
+ *     occupation 49 % toutes annonces, pic oct./mai/déc., creux jan./fév./juil.
+ *   · Federia / Gazette de Bruxelles (sept. 2025) : loyer moyen appartement — Uccle 1 520,
+ *     Ixelles 1 495, Woluwe-St-Lambert 1 478, Saint-Gilles 1 267, Schaerbeek 1 245,
+ *     Anderlecht 1 042, Jette 1 035, moyenne régionale 1 346 (1 chambre ≈ 15-20 % en dessous)
+ *
+ * adr  = prix moyen / nuit (€) d'un 1 chambre standard bien présenté
+ * occ  = occupation annuelle réaliste d'un bien géré à l'année (0–1)
+ * rent = loyer mensuel d'un 1 chambre en location classique (€)
+ * hot  = quartier à forte demande
+ */
+const ZONES = [
+  { id: 'ixelles', lat: 50.8275, lng: 4.3690, codes: ['1050'], name: 'Ixelles', postal: '1050',
+    desc: 'La commune la plus demandée : cafés du Châtelain, étangs d\'Ixelles, Flagey et l\'avenue Louise.',
+    quartiers: [
+      { name: 'Châtelain', adr: 110, occ: 0.72, rent: 1300, hot: true },
+      { name: 'Flagey', adr: 100, occ: 0.70, rent: 1200, hot: true },
+      { name: 'Louise', adr: 115, occ: 0.70, rent: 1350, hot: true },
+      { name: 'Cimetière d\'Ixelles', adr: 90, occ: 0.66, rent: 1100 },
+      { name: 'Matongé', adr: 95, occ: 0.68, rent: 1100 },
+      { name: 'Brugmann', adr: 105, occ: 0.66, rent: 1250 }
+    ]},
+  { id: 'bruxelles', lat: 50.8467, lng: 4.3525, codes: ['1000', '1020', '1120', '1130'], name: 'Bruxelles-Ville', postal: '1000',
+    desc: 'Le cœur historique : Grand-Place, Sablon, Dansaert et le Quartier Européen attirent tourisme et voyages d\'affaires toute l\'année.',
+    quartiers: [
+      { name: 'Grand-Place / Centre', adr: 130, occ: 0.74, rent: 1100, hot: true },
+      { name: 'Sablon', adr: 135, occ: 0.72, rent: 1300, hot: true },
+      { name: 'Quartier Européen', adr: 115, occ: 0.72, rent: 1200, hot: true },
+      { name: 'Dansaert / Sainte-Catherine', adr: 115, occ: 0.72, rent: 1150 },
+      { name: 'Marolles', adr: 100, occ: 0.68, rent: 1000 },
+      { name: 'Quartier Royal', adr: 120, occ: 0.70, rent: 1250 }
+    ]},
+  { id: 'saint-gilles', lat: 50.8265, lng: 4.3450, codes: ['1060'], name: 'Saint-Gilles', postal: '1060',
+    desc: 'Ambiance bohème et Art nouveau : le Parvis, la Maison Horta et la gare du Midi (Thalys, Eurostar).',
+    quartiers: [
+      { name: 'Parvis', adr: 92, occ: 0.70, rent: 1050, hot: true },
+      { name: 'Ma Campagne', adr: 100, occ: 0.68, rent: 1100 },
+      { name: 'Gare du Midi', adr: 85, occ: 0.70, rent: 950 },
+      { name: 'Bethléem', adr: 80, occ: 0.64, rent: 950 }
+    ]},
+  { id: 'uccle', lat: 50.8020, lng: 4.3370, codes: ['1180'], name: 'Uccle', postal: '1180',
+    desc: 'Résidentiel et vert : maisons de maître, Bois de la Cambre, écoles internationales.',
+    quartiers: [
+      { name: 'Fort Jaco', adr: 105, occ: 0.60, rent: 1300, hot: true },
+      { name: 'Vanderkindere', adr: 98, occ: 0.62, rent: 1250 },
+      { name: 'Observatoire', adr: 95, occ: 0.60, rent: 1200 },
+      { name: 'Saint-Job', adr: 90, occ: 0.56, rent: 1150 }
+    ]},
+  { id: 'etterbeek', lat: 50.8367, lng: 4.3900, codes: ['1040'], name: 'Etterbeek', postal: '1040',
+    desc: 'Aux portes des institutions européennes et du Cinquantenaire : forte demande en semaine.',
+    quartiers: [
+      { name: 'Jourdan / Européen', adr: 100, occ: 0.70, rent: 1150, hot: true },
+      { name: 'Cinquantenaire / Mérode', adr: 95, occ: 0.66, rent: 1100 },
+      { name: 'La Chasse', adr: 85, occ: 0.64, rent: 1000 }
+    ]},
+  { id: 'schaerbeek', lat: 50.8620, lng: 4.3770, codes: ['1030'], name: 'Schaerbeek', postal: '1030',
+    desc: 'Patrimoine Art nouveau et quartiers en plein essor, près de la gare du Nord.',
+    quartiers: [
+      { name: 'Diamant / Plasky', adr: 85, occ: 0.64, rent: 1050, hot: true },
+      { name: 'Dailly / Meiser', adr: 80, occ: 0.62, rent: 1000 },
+      { name: 'Josaphat', adr: 78, occ: 0.60, rent: 980 }
+    ]},
+  { id: 'forest', lat: 50.8100, lng: 4.3170, codes: ['1190'], name: 'Forest', postal: '1190',
+    desc: 'Entre Saint-Gilles et Uccle : Altitude 100, parc Duden, Forest National et le WIELS.',
+    quartiers: [
+      { name: 'Altitude 100', adr: 85, occ: 0.62, rent: 1050 },
+      { name: 'Parc de Forest', adr: 80, occ: 0.60, rent: 950 },
+      { name: 'Wiels', adr: 75, occ: 0.58, rent: 900 }
+    ]},
+  { id: 'woluwe', lat: 50.8420, lng: 4.4300, codes: ['1150', '1200'], name: 'Woluwe', postal: '1150 · 1200',
+    desc: 'Woluwe-Saint-Pierre et Saint-Lambert : familles, expatriés, proximité de l\'aéroport.',
+    quartiers: [
+      { name: 'Montgomery / Stockel', adr: 95, occ: 0.60, rent: 1250, hot: true },
+      { name: 'Tomberg', adr: 85, occ: 0.58, rent: 1150 },
+      { name: 'Georges Henri', adr: 88, occ: 0.58, rent: 1180 }
+    ]},
+  { id: 'auderghem', lat: 50.8150, lng: 4.4300, codes: ['1160'], name: 'Auderghem', postal: '1160',
+    desc: 'Verdure et accessibilité : forêt de Soignes, boulevard du Souverain, accès direct à l\'E411.',
+    quartiers: [
+      { name: 'Souverain', adr: 82, occ: 0.57, rent: 1100 },
+      { name: 'Chant d\'Oiseau', adr: 85, occ: 0.56, rent: 1100 }
+    ]},
+  { id: 'watermael', lat: 50.7950, lng: 4.4150, codes: ['1170'], name: 'Watermael-Boitsfort', postal: '1170',
+    desc: 'La commune la plus verte de la Région : cités-jardins et calme à 15 minutes du centre.',
+    quartiers: [
+      { name: 'Boitsfort centre', adr: 82, occ: 0.54, rent: 1100 },
+      { name: 'Le Logis / Floréal', adr: 78, occ: 0.52, rent: 1050 }
+    ]},
+  { id: 'jette', lat: 50.8780, lng: 4.3260, codes: ['1090'], name: 'Jette', postal: '1090',
+    desc: 'Près de l\'UZ Brussel et de l\'Atomium : séjours médicaux et familiaux, bon rendement.',
+    quartiers: [
+      { name: 'Miroir', adr: 75, occ: 0.60, rent: 850 },
+      { name: 'Atomium / Laeken', adr: 78, occ: 0.62, rent: 870 }
+    ]},
+  { id: 'anderlecht', lat: 50.8380, lng: 4.3080, codes: ['1070'], name: 'Anderlecht', postal: '1070',
+    desc: 'En pleine transformation, à quelques minutes de la gare du Midi, avec des biens spacieux.',
+    quartiers: [
+      { name: 'Saint-Guidon', adr: 72, occ: 0.62, rent: 870 },
+      { name: 'Cureghem / Midi', adr: 70, occ: 0.64, rent: 830 }
+    ]}
+];
 
   /**
    * BIENS GÉRÉS — pour ajouter un appartement, copiez une ligne du modèle
@@ -146,8 +156,8 @@
       luxury:   { adr: 1.42, occ: 1.05 }
     },
     rangeSpread: 0.12,
-    occCalibration: 0.90,     // prudence sur l'occupation annuelle
-    rentCalibration: 1.25     // loyers classiques actuels
+    occCalibration: 1.00,     // (les taux d'occupation ci-dessus sont déjà réalistes)
+    rentCalibration: 1.00     // (loyers alignés sur Federia, sept. 2025)
   };
 
   const ROOM_LABELS = ['Studio', '1 chambre', '2 chambres', '3 chambres', '4 chambres et +'];
@@ -376,7 +386,7 @@
     if (link) link.addEventListener('click', () => {
       selectZone(link.dataset.zoneLink);
       map.closePopup();
-      $('#zones-panel').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      $('#zones').scrollIntoView({ behavior: 'smooth' });
     });
   });
   window.highlightZonePin = zoneId => {
@@ -407,7 +417,9 @@
       const homeIcon = L.divIcon({ className: '', html: '<div class="map-home"></div>', iconSize: [20, 20], iconAnchor: [10, 10] });
       if (homeMarker) map.removeLayer(homeMarker);
       homeMarker = L.marker([lat, lng], { icon: homeIcon, title: 'Votre logement' }).addTo(map);
-      map.flyTo([lat, lng], 14, { duration: .8 });
+      // Animation si la carte est visible ; sinon (onglet en arrière-plan) recentrage direct
+      map.invalidateSize();
+      try { map.flyTo([lat, lng], 14, { duration: .8 }); } catch (_) { map.setView([lat, lng], 14, { animate: false }); }
 
       // Commune reconnue via le code postal, sinon via le nom renvoyé
       const a = r.address || {};
@@ -419,13 +431,14 @@
       if (zone) {
         selectZone(zone.id);
         status.className = 'map-status is-ok';
-        status.textContent = short + ' — bonne nouvelle, ' + zone.name + ' fait partie de nos communes couvertes.';
-        $('#zones-panel').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        status.innerHTML = short + ' — bonne nouvelle, <strong>' + zone.name + '</strong> fait partie de nos communes couvertes. ' +
+          '<a href="#zones">Voir les quartiers</a> · <a href="#simulateur">Estimer mes revenus</a>';
       } else {
         status.className = 'map-status is-warn';
         status.textContent = short + ' — cette commune n’est pas encore listée, mais nous étudions chaque demande : écrivez-nous sur WhatsApp.';
       }
     } catch (err) {
+      console.error('Recherche d’adresse :', err);
       status.className = 'map-status is-warn';
       status.textContent = 'La recherche d’adresse est momentanément indisponible. Choisissez votre commune ci-dessous.';
     }
