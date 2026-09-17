@@ -40,90 +40,90 @@ const ZONES = [
   { id: 'ixelles', lat: 50.8275, lng: 4.3690, codes: ['1050'], name: 'Ixelles', postal: '1050',
     desc: 'La commune la plus demandée : cafés du Châtelain, étangs d\'Ixelles, Flagey et l\'avenue Louise.',
     quartiers: [
-      { name: 'Châtelain', adr: 110, occ: 0.72, rent: 1300, hot: true },
-      { name: 'Flagey', adr: 100, occ: 0.70, rent: 1200, hot: true },
-      { name: 'Louise', adr: 115, occ: 0.70, rent: 1350, hot: true },
-      { name: 'Cimetière d\'Ixelles', adr: 90, occ: 0.66, rent: 1100 },
-      { name: 'Matongé', adr: 95, occ: 0.68, rent: 1100 },
-      { name: 'Brugmann', adr: 105, occ: 0.66, rent: 1250 }
+{ name: 'Châtelain', lat: 50.8258, lng: 4.36, adr: 110, occ: 0.72, rent: 1300, hot: true },
+{ name: 'Flagey', lat: 50.8275, lng: 4.372, adr: 100, occ: 0.70, rent: 1200, hot: true },
+{ name: 'Louise', lat: 50.832, lng: 4.358, adr: 115, occ: 0.70, rent: 1350, hot: true },
+{ name: 'Cimetière d\'Ixelles', lat: 50.819, lng: 4.386, adr: 90, occ: 0.66, rent: 1100 },
+{ name: 'Matongé', lat: 50.8375, lng: 4.364, adr: 95, occ: 0.68, rent: 1100 },
+{ name: 'Brugmann', lat: 50.8175, lng: 4.36, adr: 105, occ: 0.66, rent: 1250 }
     ]},
   { id: 'bruxelles', lat: 50.8467, lng: 4.3525, codes: ['1000', '1020', '1120', '1130'], name: 'Bruxelles-Ville', postal: '1000',
     desc: 'Le cœur historique : Grand-Place, Sablon, Dansaert et le Quartier Européen attirent tourisme et voyages d\'affaires toute l\'année.',
     quartiers: [
-      { name: 'Grand-Place / Centre', adr: 130, occ: 0.74, rent: 1100, hot: true },
-      { name: 'Sablon', adr: 135, occ: 0.72, rent: 1300, hot: true },
-      { name: 'Quartier Européen', adr: 115, occ: 0.72, rent: 1200, hot: true },
-      { name: 'Dansaert / Sainte-Catherine', adr: 115, occ: 0.72, rent: 1150 },
-      { name: 'Marolles', adr: 100, occ: 0.68, rent: 1000 },
-      { name: 'Quartier Royal', adr: 120, occ: 0.70, rent: 1250 }
+{ name: 'Grand-Place / Centre', lat: 50.8467, lng: 4.3525, adr: 130, occ: 0.74, rent: 1100, hot: true },
+{ name: 'Sablon', lat: 50.841, lng: 4.356, adr: 135, occ: 0.72, rent: 1300, hot: true },
+{ name: 'Quartier Européen', lat: 50.842, lng: 4.38, adr: 115, occ: 0.72, rent: 1200, hot: true },
+{ name: 'Dansaert / Sainte-Catherine', lat: 50.85, lng: 4.345, adr: 115, occ: 0.72, rent: 1150 },
+{ name: 'Marolles', lat: 50.8375, lng: 4.347, adr: 100, occ: 0.68, rent: 1000 },
+{ name: 'Quartier Royal', lat: 50.843, lng: 4.362, adr: 120, occ: 0.70, rent: 1250 }
     ]},
   { id: 'saint-gilles', lat: 50.8265, lng: 4.3450, codes: ['1060'], name: 'Saint-Gilles', postal: '1060',
     desc: 'Ambiance bohème et Art nouveau : le Parvis, la Maison Horta et la gare du Midi (Thalys, Eurostar).',
     quartiers: [
-      { name: 'Parvis', adr: 92, occ: 0.70, rent: 1050, hot: true },
-      { name: 'Ma Campagne', adr: 100, occ: 0.68, rent: 1100 },
-      { name: 'Gare du Midi', adr: 85, occ: 0.70, rent: 950 },
-      { name: 'Bethléem', adr: 80, occ: 0.64, rent: 950 }
+{ name: 'Parvis', lat: 50.829, lng: 4.345, adr: 92, occ: 0.70, rent: 1050, hot: true },
+{ name: 'Ma Campagne', lat: 50.8225, lng: 4.354, adr: 100, occ: 0.68, rent: 1100 },
+{ name: 'Gare du Midi', lat: 50.8355, lng: 4.336, adr: 85, occ: 0.70, rent: 950 },
+{ name: 'Bethléem', lat: 50.824, lng: 4.339, adr: 80, occ: 0.64, rent: 950 }
     ]},
   { id: 'uccle', lat: 50.8020, lng: 4.3370, codes: ['1180'], name: 'Uccle', postal: '1180',
     desc: 'Résidentiel et vert : maisons de maître, Bois de la Cambre, écoles internationales.',
     quartiers: [
-      { name: 'Fort Jaco', adr: 105, occ: 0.60, rent: 1300, hot: true },
-      { name: 'Vanderkindere', adr: 98, occ: 0.62, rent: 1250 },
-      { name: 'Observatoire', adr: 95, occ: 0.60, rent: 1200 },
-      { name: 'Saint-Job', adr: 90, occ: 0.56, rent: 1150 }
+{ name: 'Fort Jaco', lat: 50.792, lng: 4.356, adr: 105, occ: 0.60, rent: 1300, hot: true },
+{ name: 'Vanderkindere', lat: 50.811, lng: 4.347, adr: 98, occ: 0.62, rent: 1250 },
+{ name: 'Observatoire', lat: 50.7985, lng: 4.358, adr: 95, occ: 0.60, rent: 1200 },
+{ name: 'Saint-Job', lat: 50.788, lng: 4.34, adr: 90, occ: 0.56, rent: 1150 }
     ]},
   { id: 'etterbeek', lat: 50.8367, lng: 4.3900, codes: ['1040'], name: 'Etterbeek', postal: '1040',
     desc: 'Aux portes des institutions européennes et du Cinquantenaire : forte demande en semaine.',
     quartiers: [
-      { name: 'Jourdan / Européen', adr: 100, occ: 0.70, rent: 1150, hot: true },
-      { name: 'Cinquantenaire / Mérode', adr: 95, occ: 0.66, rent: 1100 },
-      { name: 'La Chasse', adr: 85, occ: 0.64, rent: 1000 }
+{ name: 'Jourdan / Européen', lat: 50.8375, lng: 4.381, adr: 100, occ: 0.70, rent: 1150, hot: true },
+{ name: 'Cinquantenaire / Mérode', lat: 50.838, lng: 4.398, adr: 95, occ: 0.66, rent: 1100 },
+{ name: 'La Chasse', lat: 50.83, lng: 4.39, adr: 85, occ: 0.64, rent: 1000 }
     ]},
   { id: 'schaerbeek', lat: 50.8620, lng: 4.3770, codes: ['1030'], name: 'Schaerbeek', postal: '1030',
     desc: 'Patrimoine Art nouveau et quartiers en plein essor, près de la gare du Nord.',
     quartiers: [
-      { name: 'Diamant / Plasky', adr: 85, occ: 0.64, rent: 1050, hot: true },
-      { name: 'Dailly / Meiser', adr: 80, occ: 0.62, rent: 1000 },
-      { name: 'Josaphat', adr: 78, occ: 0.60, rent: 980 }
+{ name: 'Diamant / Plasky', lat: 50.852, lng: 4.396, adr: 85, occ: 0.64, rent: 1050, hot: true },
+{ name: 'Dailly / Meiser', lat: 50.856, lng: 4.392, adr: 80, occ: 0.62, rent: 1000 },
+{ name: 'Josaphat', lat: 50.86, lng: 4.38, adr: 78, occ: 0.60, rent: 980 }
     ]},
   { id: 'forest', lat: 50.8100, lng: 4.3170, codes: ['1190'], name: 'Forest', postal: '1190',
     desc: 'Entre Saint-Gilles et Uccle : Altitude 100, parc Duden, Forest National et le WIELS.',
     quartiers: [
-      { name: 'Altitude 100', adr: 85, occ: 0.62, rent: 1050 },
-      { name: 'Parc de Forest', adr: 80, occ: 0.60, rent: 950 },
-      { name: 'Wiels', adr: 75, occ: 0.58, rent: 900 }
+{ name: 'Altitude 100', lat: 50.811, lng: 4.333, adr: 85, occ: 0.62, rent: 1050 },
+{ name: 'Parc de Forest', lat: 50.8155, lng: 4.3245, adr: 80, occ: 0.60, rent: 950 },
+{ name: 'Wiels', lat: 50.8225, lng: 4.33, adr: 75, occ: 0.58, rent: 900 }
     ]},
   { id: 'woluwe', lat: 50.8420, lng: 4.4300, codes: ['1150', '1200'], name: 'Woluwe', postal: '1150 · 1200',
     desc: 'Woluwe-Saint-Pierre et Saint-Lambert : familles, expatriés, proximité de l\'aéroport.',
     quartiers: [
-      { name: 'Montgomery / Stockel', adr: 95, occ: 0.60, rent: 1250, hot: true },
-      { name: 'Tomberg', adr: 85, occ: 0.58, rent: 1150 },
-      { name: 'Georges Henri', adr: 88, occ: 0.58, rent: 1180 }
+{ name: 'Montgomery / Stockel', lat: 50.838, lng: 4.438, adr: 95, occ: 0.60, rent: 1250, hot: true },
+{ name: 'Tomberg', lat: 50.847, lng: 4.42, adr: 85, occ: 0.58, rent: 1150 },
+{ name: 'Georges Henri', lat: 50.841, lng: 4.411, adr: 88, occ: 0.58, rent: 1180 }
     ]},
   { id: 'auderghem', lat: 50.8150, lng: 4.4300, codes: ['1160'], name: 'Auderghem', postal: '1160',
     desc: 'Verdure et accessibilité : forêt de Soignes, boulevard du Souverain, accès direct à l\'E411.',
     quartiers: [
-      { name: 'Souverain', adr: 82, occ: 0.57, rent: 1100 },
-      { name: 'Chant d\'Oiseau', adr: 85, occ: 0.56, rent: 1100 }
+{ name: 'Souverain', lat: 50.813, lng: 4.427, adr: 82, occ: 0.57, rent: 1100 },
+{ name: 'Chant d\'Oiseau', lat: 50.824, lng: 4.423, adr: 85, occ: 0.56, rent: 1100 }
     ]},
   { id: 'watermael', lat: 50.7950, lng: 4.4150, codes: ['1170'], name: 'Watermael-Boitsfort', postal: '1170',
     desc: 'La commune la plus verte de la Région : cités-jardins et calme à 15 minutes du centre.',
     quartiers: [
-      { name: 'Boitsfort centre', adr: 82, occ: 0.54, rent: 1100 },
-      { name: 'Le Logis / Floréal', adr: 78, occ: 0.52, rent: 1050 }
+{ name: 'Boitsfort centre', lat: 50.798, lng: 4.413, adr: 82, occ: 0.54, rent: 1100 },
+{ name: 'Le Logis / Floréal', lat: 50.8, lng: 4.408, adr: 78, occ: 0.52, rent: 1050 }
     ]},
   { id: 'jette', lat: 50.8780, lng: 4.3260, codes: ['1090'], name: 'Jette', postal: '1090',
     desc: 'Près de l\'UZ Brussel et de l\'Atomium : séjours médicaux et familiaux, bon rendement.',
     quartiers: [
-      { name: 'Miroir', adr: 75, occ: 0.60, rent: 850 },
-      { name: 'Atomium / Laeken', adr: 78, occ: 0.62, rent: 870 }
+{ name: 'Miroir', lat: 50.879, lng: 4.327, adr: 75, occ: 0.60, rent: 850 },
+{ name: 'Atomium / Laeken', lat: 50.893, lng: 4.34, adr: 78, occ: 0.62, rent: 870 }
     ]},
   { id: 'anderlecht', lat: 50.8380, lng: 4.3080, codes: ['1070'], name: 'Anderlecht', postal: '1070',
     desc: 'En pleine transformation, à quelques minutes de la gare du Midi, avec des biens spacieux.',
     quartiers: [
-      { name: 'Saint-Guidon', adr: 72, occ: 0.62, rent: 870 },
-      { name: 'Cureghem / Midi', adr: 70, occ: 0.64, rent: 830 }
+{ name: 'Saint-Guidon', lat: 50.835, lng: 4.308, adr: 72, occ: 0.62, rent: 870 },
+{ name: 'Cureghem / Midi', lat: 50.839, lng: 4.322, adr: 70, occ: 0.64, rent: 830 }
     ]}
 ];
 
@@ -171,6 +171,35 @@ const ZONES = [
     if (!zone) return null;
     return { zone, q: zone.quartiers.find(x => x.name === qName) || zone.quartiers[0] };
   }
+
+/** Normalise un libellé pour la comparaison (minuscules, sans accents) */
+const norm = s => String(s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
+/**
+ * Trouve le quartier d'une adresse dans une commune :
+ * 1) un nom de quartier renvoyé par OpenStreetMap correspond à l'un des nôtres,
+ * 2) sinon le quartier dont le centre est le plus proche du point géocodé.
+ */
+function detectQuartier(zone, lat, lng, osmAddress) {
+  // 1) Nom de quartier renvoyé par OpenStreetMap (dans la commune détectée)
+  const labels = [osmAddress.neighbourhood, osmAddress.quarter, osmAddress.suburb, osmAddress.city_district]
+    .filter(Boolean).map(norm).join(' | ');
+  const byName = zone.quartiers.find(q => q.name.split('/').some(part => labels.includes(norm(part.trim()))));
+  if (byName) return { zone, q: byName };
+
+  // 2) Quartier le plus proche, toutes communes couvertes confondues : les limites
+  //    communales bruxelloises sont parfois contre-intuitives (ex. rue du Bailli =
+  //    Bruxelles-Ville mais à 200 m du Châtelain), et c'est la proximité qui
+  //    détermine le marché locatif.
+  let best = { zone, q: zone.quartiers[0] }, bestD = Infinity;
+  const cosLat = Math.cos(lat * Math.PI / 180);
+  ZONES.forEach(z => z.quartiers.forEach(q => {
+    if (q.lat == null) return;
+    const d = (q.lat - lat) ** 2 + ((q.lng - lng) * cosLat) ** 2;
+    if (d < bestD) { bestD = d; best = { zone: z, q }; }
+  }));
+  return best;
+}
 
 /** Quartier « moyen » d'une commune : moyenne des prix, occupations et loyers */
 function zoneAverage(zone) {
@@ -436,10 +465,11 @@ function zoneAverage(zone) {
                    ZONES.find(z => label.toLowerCase().includes(z.name.toLowerCase().split('-')[0]));
       const short = r.display_name.split(',').slice(0, 2).join(',');
       if (zone) {
-        selectZone(zone.id);
+        const found = detectQuartier(zone, lat, lng, a);
+        selectZone(found.zone.id);
         status.className = 'map-status is-ok';
-        status.innerHTML = short + ' — bonne nouvelle, <strong>' + zone.name + '</strong> fait partie de nos communes couvertes. Voici une première estimation :';
-        window.showMapEstimate(zone, short);
+        status.innerHTML = short + ' — bonne nouvelle, <strong>' + found.zone.name + ' – ' + found.q.name + '</strong> fait partie de nos zones couvertes. Voici une première estimation :';
+        window.showMapEstimate(found.zone, short, found.q);
       } else {
         status.className = 'map-status is-warn';
         status.textContent = short + ' — cette commune n’est pas encore listée, mais nous étudions chaque demande : écrivez-nous sur WhatsApp.';
@@ -511,14 +541,16 @@ function zoneAverage(zone) {
 
 
 /* ---------- 6b. ESTIMATION IMMÉDIATE SOUS LA CARTE ----------------------- */
-let mapCtx = null;   // { zone, address }
+  let mapCtx = null;   // { zone, address, quartier }
 
 function renderMapEstimate() {
   if (!mapCtx) return;
   const rooms = parseInt($('#mr-rooms').value, 10);
   const type = $('#mr-type').value;
   const standing = $('#mr-standing').value;
-  const r = estimate({ q: zoneAverage(mapCtx.zone), rooms, type, standing });
+    const qSel = $('#mr-quartier');
+    const quartier = mapCtx.zone.quartiers.find(q => q.name === qSel.value) || mapCtx.quartier;
+    const r = estimate({ q: quartier, rooms, type, standing });
 
   $('#mr-gross').textContent = euro.format(r.gross);
   $('#mr-range').textContent = `entre ${euro.format(r.low)} et ${euro.format(r.high)} selon la saison`;
@@ -527,12 +559,11 @@ function renderMapEstimate() {
   $('#mr-adr').textContent = `${r.adr} € · ${r.occ} %`;
 
   $('#mr-wa').setAttribute('href', waLink(
-    `Bonjour, j'ai fait une estimation sur votre site pour mon bien situé ${mapCtx.address} (${mapCtx.zone.name}, ${ROOM_LABELS[rooms]}) : environ ${euro.format(r.gross)} brut par mois. J'aimerais une estimation détaillée.`
+      `Bonjour, j'ai fait une estimation sur votre site pour mon bien situé ${mapCtx.address} (${mapCtx.zone.name} – ${quartier.name}, ${ROOM_LABELS[rooms]}) : environ ${euro.format(r.gross)} brut par mois. J'aimerais une estimation détaillée.`
   ));
 
-  // Le simulateur principal reprend les mêmes réglages (quartier phare de la commune)
-  const hot = mapCtx.zone.quartiers.find(q => q.hot) || mapCtx.zone.quartiers[0];
-  simZone.value = `${mapCtx.zone.id}|${hot.name}`;
+    // Le simulateur principal reprend les mêmes réglages (même quartier)
+    simZone.value = `${mapCtx.zone.id}|${quartier.name}`;
   simRooms.value = String(rooms);
   simType.value = type;
   const radio = simForm.querySelector(`input[name="standing"][value="${standing}"]`);
@@ -540,10 +571,14 @@ function renderMapEstimate() {
   runSimulation();
 }
 
-window.showMapEstimate = (zone, address) => {
-  mapCtx = { zone, address };
+window.showMapEstimate = (zone, address, quartier) => {
+  mapCtx = { zone, address, quartier };
   $('#mr-title').textContent = address;
-  $('#mr-sub').textContent = `${zone.name} (${zone.postal}) — moyenne des quartiers de la commune`;
+  $('#mr-sub').textContent = `${zone.name} (${zone.postal})`;
+  // Menu « quartier détecté », pré-réglé sur le quartier trouvé, modifiable
+  const qSel = $('#mr-quartier');
+  qSel.innerHTML = zone.quartiers.map(q => `<option value="${q.name}">${q.name}</option>`).join('');
+  qSel.value = quartier.name;
   renderMapEstimate();
   const box = $('#map-result');
   box.hidden = false;

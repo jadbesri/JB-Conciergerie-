@@ -162,9 +162,13 @@
     <h3 id="mr-title">—</h3>
     <p class="map-result__sub" id="mr-sub"></p>
   </div>
-  <form class="map-result__form" id="mr-form" novalidate>
-    <div class="field">
-      <label for="mr-rooms">Chambres</label>
+        <form class="map-result__form" id="mr-form" novalidate>
+          <div class="field field--wide">
+            <label for="mr-quartier">Quartier détecté <small>(modifiable)</small></label>
+            <select id="mr-quartier" name="quartier"></select>
+          </div>
+          <div class="field">
+            <label for="mr-rooms">Chambres</label>
       <select id="mr-rooms" name="rooms">
         <option value="0">Studio</option>
         <option value="1" selected>1 chambre</option>
@@ -209,7 +213,7 @@
     </a>
     <a href="#simulateur" class="btn btn--outline">Affiner dans le simulateur</a>
   </div>
-  <p class="result__disclaimer">Estimation indicative basée sur les moyennes de la commune, non contractuelle. Le simulateur permet d'affiner par quartier.</p>
+        <p class="result__disclaimer">Estimation indicative, non contractuelle, calculée pour le quartier détecté à partir de l'adresse. Vous pouvez corriger le quartier si besoin.</p>
 </div>
     </div>
   </div>

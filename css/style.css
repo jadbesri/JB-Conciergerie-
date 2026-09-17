@@ -327,6 +327,7 @@ input[type="range"] { width: 100%; accent-color: var(--green); cursor: pointer; 
 .map-result__head h3 { font-size: 1.5rem; margin: 0 0 4px; }
 .map-result__sub { color: var(--muted); font-size: .9rem; margin: 0 0 16px; }
 .map-result__form { display: grid; gap: 0 14px; }
+.map-result__form label small { font-weight: 400; color: var(--muted); }
 .map-result__figures { display: grid; gap: 16px; padding: 18px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin: 4px 0 18px; }
 .map-result__main { text-align: center; }
 .map-result__value { display: block; font-family: var(--font-serif); font-size: 2.6rem; font-weight: 600; color: var(--green); line-height: 1.1; margin: 4px 0 2px; }
@@ -473,6 +474,7 @@ input[type="range"] { width: 100%; accent-color: var(--green); cursor: pointer; 
   .map-search { flex-direction: row; }
   .zones__map { height: 420px; }
   .map-result__form { grid-template-columns: repeat(3, 1fr); }
+  .map-result__form .field--wide { grid-column: 1 / -1; }
   .map-result__figures { grid-template-columns: 1fr 1.2fr; align-items: center; }
   .map-result__actions { flex-direction: row; }
   .map-result__actions .btn { width: auto; }
